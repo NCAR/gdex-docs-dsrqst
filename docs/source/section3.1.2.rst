@@ -1,0 +1,158 @@
+
+.. _section3.1.2:
+
+3.1.2 - Get Request Control Information
+=================================
+
+
+.. _GC:
+
+Action Option -**GC** (-**GetControl**) :
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+retrieves request control information for given datasets,
+groups or request types. Request control information of specified specialists
+are retrieved if the specialist login names are provided. Without specified
+condition, the request control records owned by the specialist who runs
+**dsrqst** are retrieved.
+
+| **dsrqst** -(GC|GetControl) [:ref:`Mode Options <mode3.1.2>`]
+|          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
+|          [:ref:`-(CI|ControlIndex) <CI>` controlIndices]
+|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(GI|GroupIndex) <GI>` GroupIndices]
+|          [:ref:`-(RT|RequestType) <RT>` RequestTypes]
+|          [:ref:`-(CM|ControlMode) <CM>` ControlMode]
+|          [:ref:`-(SN|Specialist) <SN>` DSSSpecialists]
+|          [:ref:`-(PC|Command) <PC>`  ProcessCommand]
+|          [:ref:`-(EO|EmptyOutput) <EO>` EmptyOutputFlag]
+|          [:ref:`-(UA|URL) <UA>` URLLinks]
+|          [:ref:`-(HN|HostName) <HN>`  HostMachineNames]
+|          [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
+|          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
+
+.. _mode3.1.2:
+
+:ref:`Mode options <section4>` that can be specified for getting request control Action:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 0
+
+   * - :ref:`-(FO|FormatOutput) <FO>`
+     - format the column output with a fix width for all values of a given field
+
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what request control fields to be
+retrieved. It defaults to 'CTIRWGSPOUH' if option :ref:`-FN <FN>` is not provided. Request
+control information of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
+
+Valid field names of request controls and their corresponding :ref:`Info <section5>` option
+names:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Names
+     - :ref:`Info Options <section5>`
+     - Descriptions
+   * - C
+     - :ref:`-(CI|ControlIndex) <CI>`
+     - request control index
+   * - T
+     - :ref:`-(DS|Dataset) <DS>`
+     - Dataset number/ID
+   * - I
+     - :ref:`-(GI|GroupIndex) <GI>`
+     - group index
+   * - R
+     - :ref:`-(RT|RequestType) <RT>`
+     - S - subset, F - format conversion, D - CDP
+   * - W
+     - :ref:`-(CM|ControlMode) <CM>`
+     - S - specialist controlled, A - automated
+   * - V
+     - :ref:`-(VP|ValidPeriod) <VP>`
+     - number of days the data are available
+   * - J
+     - :ref:`-(LM|RequestLimit) <LM>`
+     - up request limit (GB) of data to be requested each time
+   * - K
+     - :ref:`-(MP|MaxPeriod) <MP>`
+     - maximum default request period
+   * - L
+     - :ref:`-(PL|PartitionLimit) <PL>`
+     - up limit of file count in each partition
+   * - Z
+     - :ref:`-(PZ|PartitionSize) <PZ>`
+     - up limit of data size in each partition
+   * - F
+     - :ref:`-(PF|PartitionFlag) <PF>`
+     - partition command call flag, N, P, F and B
+   * - D
+     - :ref:`-(DF|DataFormat) <DF>`
+     - default data format for the output data
+   * - A
+     - :ref:`-(AF|ArchiveFormat) <AF>`
+     - default archive format for the output data
+   * - X
+     - :ref:`-(TF|ToFormat) <TF>`
+     - to format for data output; GRIB:NETCDF
+   * - G
+     - :ref:`-(TA|TArflag) <TA>`
+     - Y to tar small request files
+   * - S
+     - :ref:`-(SN|Specialist) <SN>`
+     - DSS specialist who controls the requests
+   * - P
+     - :ref:`-(PC|Command) <PC>`
+     - processing command provided by specialist
+   * - N
+     - :ref:`-(MR|MaxRequest) <MR>`
+     - max number of outstanding requests allowed
+   * - O
+     - :ref:`-(EO|EmptyOutput) <EO>`
+     - Y - sends email to user for empty output, default is N
+   * - U
+     - :ref:`-(UA|URL) <UA>`
+     - specified URL links for the requests
+   * - H
+     - :ref:`-(HN|HostName) <HN>`
+     - machines the requests should, or should not, be processed
+   * - M
+     - :ref:`-(MO|Modules) <MO>`
+     - include modules to load to batch job script
+   * - B
+     - :ref:`-(EV|Environments) <EV>`
+     - include environment vairables to load to batch job script
+   * - Q
+     - :ref:`-(QS|QsubOptions) <QS>`
+     - additional PBS batch options for qsub
+   * - E
+     - :ref:`-(EN|EmailNotice) <EN>`
+     - email notice template file, instead of the default one
+   * - Y
+     - :ref:`-(CC|CarbonCopy) <CC>`
+     - Carbon copy emails; S - specialist only
+
+Request control information can be retrieved for specified datasets per option
+:ref:`-DS <DS>` (-Dataset), and/or other conditions. :ref:`Info option <section5>` :ref:`-DS <DS>` accepts wildcard
+input of '%' for matching any number of characters.
+
+If dataset number is not given, only the request control records, owned by the
+specialist who executes this getting control Action of **dsrqst**, are gathered.
+To view request control records owned by another specialist, you need specify :ref:`Info <section5>`
+option :ref:`-SN <SN>` (-Specialist) for that specialist. To view all request control records,
+you simply provide option :ref:`-SN <SN>` with value of 'ALL'.
+
+
+.. _3.1.2_e2:
+
+**EXAMPLE 2. To get all request control information currently available with all control fields under your control:**
+
+| **dsrqst** :ref:`GC <GC>` :ref:`-FN <FN>` ALL
+
+
+
+| :ref:`Back to Top <section3.1.2>`
+| :ref:`Back to Table of Contents <index>`
