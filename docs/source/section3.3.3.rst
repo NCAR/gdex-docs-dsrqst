@@ -32,20 +32,20 @@ metrics.
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded "dsrqst' command be started anywhere.
+     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere.
    * - :ref:`-(BG|BackGround) <BG>`
      - background process to turn off screen display for both standard outputs and errors
    * - :ref:`-(FP|ForcePurge) <FP>`
      - it must be present for this action to purge a request with data online but not due to be purged yet
 
-A request must be in status of either "P" (Ready for Purge) or "O" (Data
-Online) with due purging time when it can be purged. For requests with status
+A request must be in status "P" (Ready for Purge) or "O" (Data Online) with
+a due purging time before it can be purged. For requests with status
 "O" but not due yet, :ref:`Mode option <section4>` :ref:`-FP <FP>` (-ForcePurge) must be present for them
-to be purged. To purge a request, DSS specialist must also be the owner of the
-request.
+to be purged. To purge a request, the DSS specialist must also be the owner
+of the request.
 
-In case a specialist tries to purge a request owned by another specialist, use
-:ref:`Info option <section5>` :ref:`-LN <LN>` (-LoginName) to provide that specialist login name.
+If a specialist needs to purge a request owned by another specialist, use
+:ref:`Info option <section5>` :ref:`-LN <LN>` (-LoginName) to provide that specialist's login name.
 
 
 

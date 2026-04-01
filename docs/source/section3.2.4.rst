@@ -13,14 +13,14 @@ Action Option -**GP** (-**GetPartition**) :
 retrieves request partition information for specified
 partitions or requests if the partition or request indices are provided,
 respectively. Without specified condition, the information of partitions,
-owned by the current specialist who execute this  Action of **dsrqst**, are
+owned by the current specialist who executes this Action of **dsrqst**, are
 retrieved.
 
 | **dsrqst** -(GP|GetPartition) [:ref:`Mode Options <mode3.2.4>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
-|          [:ref:`-(PI|PartititonIndex) <PI>` PartitionIndices]
+|          [:ref:`-(PI|PartitionIndex) <PI>` PartitionIndices]
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(RS|RequestStatus) <RS>` RequestStatus]
 |          [:ref:`-(SN|Specialist) <SN>` Specialists]
 |          [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
@@ -37,12 +37,12 @@ retrieved.
    * - :ref:`-(CS|CheckStatus) <CS>`
      - check and show more detailed information on partition status
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - format the column output with a fix width for all values of a given field
+     - format the column output with a fixed width for all values of a given field
 
 Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what partition fields to be
-retrieved. It defaults all available fields.
+retrieved. It defaults to all available fields.
 
-Valid field names of requests and their corresponding :ref:`Info option <section5>` names:
+Valid field names of partitions and their corresponding :ref:`Info option <section5>` names:
 
 .. list-table::
    :widths: auto
@@ -55,13 +55,13 @@ Valid field names of requests and their corresponding :ref:`Info option <section
      - :ref:`-(PI|PartitionIndex) <PI>`
      - request partition index
    * - R
-     - :ref:`-(RI|ReuqstIndex) <RI>`
+     - :ref:`-(RI|RequestIndex) <RI>`
      - data request index
    * - B
      - :ref:`-(DS|Dataset) <DS>`
-     - dataset name/ID, dsnnn.n
+     - dataset name/ID, dNNNNNN
    * - A
-     - :ref:`-(PS|PartitonStatus) <PS>`
+     - :ref:`-(PS|PartitionStatus) <PS>`
      - request partition status
    * - O
      - :ref:`-(DO|DisplayOrder) <DO>`
@@ -75,8 +75,8 @@ Valid field names of requests and their corresponding :ref:`Info option <section
 
 Request partition information can be retrieved for specified request indices per
 option :ref:`-RI <RI>` (-RequestIndex). If dataset and partition are not specified,
-partition records, owned by the specialist who issue getting partition Action
-of **dsrqst**, are retrieved.
+partition records owned by the specialist who issues the getting partition Action
+of **dsrqst** are retrieved.
 
 
 .. _3.2.4_e6:

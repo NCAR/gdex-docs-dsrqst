@@ -4,8 +4,8 @@
 4 - MODE OPTIONS
 =================================
 
-Use proper Mode options to modify behaviors of :ref:`Action options <section3>`. Mode options
-are all optional. No value is allowed to be passed in following any Mode option.
+Use proper Mode options to modify the behavior of :ref:`Action options <section3>`. Mode options
+are all optional. No values should follow any Mode option.
 
 
 .. _AW:
@@ -14,7 +14,7 @@ Mode Option -**AW** (-**AnyWhere**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to use empty
-work directory so that the recorded "dsrqst' command can be started processing
+work directory so that the recorded **dsrqst** command can be started processing
 anywhere other than the directory where the command was recorded initially.
 
 
@@ -23,8 +23,8 @@ anywhere other than the directory where the command was recorded initially.
 Mode Option -**BG** (-**BackGround**) (Alias: -**b**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-background process. When it presents
-screen display is turned off for both standard outputs and errors.
+background process. When present,
+screen display is turned off for both standard output and errors.
 
 
 .. _CS:
@@ -35,7 +35,7 @@ Mode Option -**CS** (-**CheckStatus**) (Aliases: -**CheckReqeustStatus**, -**Che
 if present, checks and displays more detailed status
 information of each request. To show process progress in percentage, fields
 dsrqst.fcount or dsrqst.size_request must not be empty, and wfrqst.status must
-be set to 'O' for echo finished data file record.
+be set to 'O' for each finished data file record.
 
 
 .. _FI:
@@ -43,8 +43,8 @@ be set to 'O' for echo finished data file record.
 Mode Option -**FI** (-**ForceInterrrupt**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-if present, force interrupts a request that is still
-under building; otherwise a warning message will display.
+if present, forcibly interrupts a request that is
+still being built; otherwise a warning message is displayed.
 
 
 .. _FO:
@@ -53,7 +53,7 @@ Mode Option -**FO** (-**FormatOutput**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 if present, formats column output results for get
-actions. A same width, evaluated dynamically, is applied for all values of a
+actions. The same width, evaluated dynamically, is applied to all values of a
 given field.
 
 
@@ -69,7 +69,7 @@ or :ref:`-UR <UR>` (-UnusedRequest) to clean the unused data files or request di
 
 .. _MD:
 
-Mode Option -**MD** (-**PgDataset**) :
+Mode Option -**MD** (-**MyDataset**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 allows a specialist to add, modify or delete request
@@ -101,10 +101,10 @@ does not send email notice to the specialist after update
 Mode Option -**NO** (-**NotOnline**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-does not publish filelist after update and set the request
-status to N. No normal email is send either since the data are not ready online,
+does not publish filelist after update and sets the request
+status to N. No normal email is sent either since the data are not ready online,
 but error message, if any, is still sent to specialist. Add Mode option :ref:`-NE <NE>`
-too if no email is wanted fo any situation.
+too if no email is wanted for any situation.
 
 
 .. _4_e8:
@@ -120,7 +120,7 @@ Mode Option -**NP** (-**NewPartition**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 new partitions can only be added for a given request
-index when this Mode option is present when :ref:`Action <section3>` :ref:`-SP <SP>` (-SetPartition) of
+index when this Mode option is present and :ref:`Action <section3>` :ref:`-SP <SP>` (-SetPartition) of
 **dsrqst** is executed.
 
 
@@ -141,9 +141,9 @@ Mode Option -**RO** (-**ResetOrder**) (Alias: -**Reorder**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 when present, resets the display orders
-of the data file lists of a request as the order data file records are given
-for actions :ref:`-SF <SF>` (-SetFile). Another way of reordering the data files is to
-provide explicitly display order index values per :ref:`Info option <section5>` :ref:`-DO <DO>`
+of the data files in a request to match the order in which data file records
+are given for :ref:`Action <section3>` :ref:`-SF <SF>` (-SetFile). Another way of reordering the data files
+is to explicitly provide display order index values per :ref:`Info option <section5>` :ref:`-DO <DO>`
 (-DisplayOrder).
 
 
@@ -152,8 +152,9 @@ provide explicitly display order index values per :ref:`Info option <section5>` 
 Mode Option -**UD** (-**UnusedData**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-checks and removes unused data under data/dsnnn.n with
-action :ref:`-DL <DL>` (-Delete). Only physically removing if Mode option :ref:`-FP <FP>` is present.
+checks and removes unused data under data/dNNNNNN with
+:ref:`Action <section3>` :ref:`-DL <DL>` (-Delete). Files are only physically removed if Mode option :ref:`-FP <FP>`
+is present.
 
 
 .. _UF:
@@ -161,8 +162,8 @@ action :ref:`-DL <DL>` (-Delete). Only physically removing if Mode option :ref:`
 Mode Option -**UF** (-**UnstagedFile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-checks and reset request file status for files are not
-on disk with action :ref:`-DL <DL>` (-Delete).
+checks and resets request file status for files that are
+not on disk with :ref:`Action <section3>` :ref:`-DL <DL>` (-Delete).
 
 
 .. _UR:
@@ -170,9 +171,9 @@ on disk with action :ref:`-DL <DL>` (-Delete).
 Mode Option -**UR** (-**UnusedRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-with action :ref:`-DL <DL>` (-Delete), checks and removes request
-directory that still on disk but not in RDADB any more. Only physically removing
-if Mode option :ref:`-FP <FP>` is present.
+with :ref:`Action <section3>` :ref:`-DL <DL>` (-Delete), checks and removes request
+directories that are still on disk but no longer in GDEXDB. Directories are only
+physically removed if Mode option :ref:`-FP <FP>` is present.
 
 
 .. _WD:
@@ -180,7 +181,7 @@ if Mode option :ref:`-FP <FP>` is present.
 Mode Option -**WD** (-**WithDataset**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-get the dataset ID for Actions :ref:`-GF <GF>` (-GetFile) and :ref:`-GT <GT>` (-GetTarFile).
+gets the dataset ID for Actions :ref:`-GF <GF>` (-GetFile) and :ref:`-GT <GT>` (-GetTarFile).
 
 
 .. _WE:
@@ -188,8 +189,8 @@ get the dataset ID for Actions :ref:`-GF <GF>` (-GetFile) and :ref:`-GT <GT>` (-
 Mode Option -**WE** (-**WithEmail**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-forces to send email to requester after the a filelist being
-republished successfully for a request. It works with :ref:`Action <section3>` :ref:`-RP <RP>` (-ResetPurge|RePublish).
+forces sending email to the requester after a filelist is
+republished successfully for a request. Works with :ref:`Action <section3>` :ref:`-RP <RP>` (-ResetPurge|RePublish).
 
 
 

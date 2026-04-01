@@ -33,7 +33,7 @@ multiple individual requests with specified request indices.
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded "dsrqst' command be started anywhere.
+     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere.
    * - :ref:`-(BG|BackGround) <BG>`
      - background process to turn off screen display for both standard outputs and errors
    * - :ref:`-(GZ|GMTZone) <GZ>`
@@ -41,19 +41,19 @@ multiple individual requests with specified request indices.
    * - :ref:`-(NE|NoEmail) <NE>`
      - does not send email to the specialist after update
    * - :ref:`-(NO|NotOnline) <NO>`
-     - does not publish fielist after update and set request status to N
+     - does not publish filelist after update and set request status to N
 
-A request must be in status of "Q" (Queued) for it can be processed. To
-process a request, DSS specialist must also be the owner of the request.
+A request must be in status "Q" (Queued) before it can be processed. To
+process a request, the DSS specialist must also be the owner of the request.
 
-In case a specialist tries to process a request owned by another specialist,
-use :ref:`Info option <section5>` :ref:`-LN <LN>` (-LoginName) to provide that specialist login name.
+If a specialist needs to process a request owned by another specialist,
+use :ref:`Info option <section5>` :ref:`-LN <LN>` (-LoginName) to provide that specialist's login name.
 
 Provide local files via :ref:`Info option <section5>` :ref:`-LF <LF>` (-LocalFile) to build Type 'C',
 Customized, request.
 
 If a customized request location is provided, the requested data are staged
-in there and the request is purged immediately.
+there and the request is purged immediately.
 
 
 

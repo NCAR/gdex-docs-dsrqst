@@ -32,7 +32,7 @@ partitions with specified partition indices.
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded "dsrqst' command be started anywhere.
+     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere.
    * - :ref:`-(BG|BackGround) <BG>`
      - background process to turn off screen display for both standard outputs and errors
    * - :ref:`-(GZ|GMTZone) <GZ>`
@@ -40,10 +40,10 @@ partitions with specified partition indices.
    * - :ref:`-(NE|NoEmail) <NE>`
      - does not send email to the specialist after update
    * - :ref:`-(NO|NotOnline) <NO>`
-     - does not publish fielist after update and set request status to N
+     - does not publish filelist after update and set request status to N
 
-A partition must be in status of "Q" (Queued) for it can be processed. To
-process a partition, DSS specialist must also be the owner of the partition.
+A partition must be in status "Q" (Queued) before it can be processed. To
+process a partition, the DSS specialist must also be the owner of the partition.
 
 
 

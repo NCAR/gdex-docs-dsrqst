@@ -16,19 +16,19 @@ included in this section:
    :header-rows: 0
 
    * - :ref:`Get Request Information <section3.2.1>`
-     - retrieve information existing requests in RDADB
+     - retrieve information of existing requests in GDEXDB
    * - :ref:`Set Request Information <section3.2.2>`
      - add new or modify existing requests
    * - :ref:`Delete Request Information <section3.2.3>`
      - delete one or multiple request records
    * - :ref:`Get Partition Information <section3.2.4>`
-     - retrieve information existing partitions
+     - retrieve information of existing partitions
    * - :ref:`Set Partition Information <section3.2.5>`
      - add new or modify existing partitions
    * - :ref:`Get Request File information <section3.2.6>`
      - retrieve data file information
    * - :ref:`Set Request File information <section3.2.7>`
-     - addd new or modify file information
+     - add new or modify file information
    * - :ref:`Delete Request File Information <section3.2.8>`
      - delete one or multiple data file records of a specified request
    * - :ref:`Get Tar File information <section3.2.9>`

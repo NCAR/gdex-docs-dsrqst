@@ -14,9 +14,9 @@ cleans requests by deleting all the files built under
 the request directories and the associated file records. Partitions are
 removed if a request is divided into partitions. File process count
 and request data size are also initialized to 0. Use this action to clean up
-the requests to allow them being rebuilt.
+the requests to allow them to be rebuilt.
 
-| **dsrqst** -(:ref:`-CR <CR>`|CleanRequest)
+| **dsrqst** -(CR|CleanRequest)
 |            :ref:`-(RI|RequestIndex) <RI>` RequestIndices
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 

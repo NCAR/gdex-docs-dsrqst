@@ -12,19 +12,19 @@ Action Option -**GR** (-**GetRequest**) :
 
 retrieves data request information for specified requests
 if the request indices are provided. Without specified condition, the
-information of requests, owned by the current specialist who execute this
+information of requests, owned by the current specialist who executes this
 Action of **dsrqst**, are retrieved.
 
 | **dsrqst** -(GR|GetRequest) [:ref:`Mode Options <mode3.2.1>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]
 |          [:ref:`-(RN|RequestName) <RN>` RequestNames]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(EM|Email) <EM>` UserEmailAddresses]
-|          [:ref:`-(RT|ReuqestType) <RT>` RequestTypes]
+|          [:ref:`-(RT|RequestType) <RT>` RequestTypes]
 |          [:ref:`-(RS|RequestStatus) <RS>` RequestStatus]
 |          [:ref:`-(TA|TArflag) <TA>` TarFlag]
-|          [:ref:`-(DQ|DateReuqest) <DQ>` DateRequestSubmit]
+|          [:ref:`-(DQ|DateRequest) <DQ>` DateRequestSubmit]
 |          [:ref:`-(DR|DateReady) <DR>`   DateRequestProcess]
 |          [:ref:`-(DP|DatePurge) <DP>` DateRequestPurge]
 |          [:ref:`-(DF|DataFormat) <DF>`  DefaultDataFormat]
@@ -45,7 +45,7 @@ Action of **dsrqst**, are retrieved.
    * - :ref:`-(CS|CheckStatus) <CS>`
      - check and show more detailed information on request status
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - format the column output with a fix width for all values of a given field
+     - format the column output with a fixed width for all values of a given field
 
 Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what request fields to be
 retrieved. It defaults to 'REBTIOCJUXAGSH' if option :ref:`-FN <FN>` is not provided.
@@ -61,17 +61,17 @@ Valid field names of requests and their corresponding :ref:`Info option <section
      - :ref:`Info Options <section5>`
      - Descriptions
    * - R
-     - :ref:`-(RI|ReuqstIndex) <RI>`
+     - :ref:`-(RI|RequestIndex) <RI>`
      - data request index
    * - Q
      - :ref:`-(RN|RequestName) <RN>`
      - request name/ID
    * - E
      - :ref:`-(EM|Email) <EM>`
-     - email of user submitted request
+     - email of the user who submitted the request
    * - B
      - :ref:`-(DS|Dataset) <DS>`
-     - dataset name/ID, dsnnn.n
+     - dataset name/ID, dNNNNNN
    * - I
      - :ref:`-(GI|GroupIndex) <GI>`
      - group index defined in table dsgroup
@@ -144,8 +144,8 @@ option :ref:`-RI <RI>` (-RequestIndex). :ref:`Info option <section5>` :ref:`-RN 
 identify request indices too. Option :ref:`-RN <RN>` accepts wildcard input of '%' for
 matching any number of characters.
 
-If dataset and request are not specified, request records, owned by the
-specialist who issue getting request Action of **dsrqst**, are retrieved.
+If dataset and request are not specified, request records owned by the
+specialist who issues the getting request Action of **dsrqst** are retrieved.
 
 
 .. _3.2.1_e3:

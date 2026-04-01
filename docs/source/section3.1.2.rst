@@ -19,7 +19,7 @@ condition, the request control records owned by the specialist who runs
 | **dsrqst** -(GC|GetControl) [:ref:`Mode Options <mode3.1.2>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
 |          [:ref:`-(CI|ControlIndex) <CI>` controlIndices]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(GI|GroupIndex) <GI>` GroupIndices]
 |          [:ref:`-(RT|RequestType) <RT>` RequestTypes]
 |          [:ref:`-(CM|ControlMode) <CM>` ControlMode]
@@ -40,7 +40,7 @@ condition, the request control records owned by the specialist who runs
    :header-rows: 0
 
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - format the column output with a fix width for all values of a given field
+     - format the column output with a fixed width for all values of a given field
 
 Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what request control fields to be
 retrieved. It defaults to 'CTIRWGSPOUH' if option :ref:`-FN <FN>` is not provided. Request
@@ -76,16 +76,16 @@ names:
      - number of days the data are available
    * - J
      - :ref:`-(LM|RequestLimit) <LM>`
-     - up request limit (GB) of data to be requested each time
+     - upper request limit (GB) of data to be requested each time
    * - K
      - :ref:`-(MP|MaxPeriod) <MP>`
      - maximum default request period
    * - L
      - :ref:`-(PL|PartitionLimit) <PL>`
-     - up limit of file count in each partition
+     - upper limit of file count in each partition
    * - Z
      - :ref:`-(PZ|PartitionSize) <PZ>`
-     - up limit of data size in each partition
+     - upper limit of data size in each partition
    * - F
      - :ref:`-(PF|PartitionFlag) <PF>`
      - partition command call flag, N, P, F and B
@@ -118,13 +118,13 @@ names:
      - specified URL links for the requests
    * - H
      - :ref:`-(HN|HostName) <HN>`
-     - machines the requests should, or should not, be processed
+     - machines on which requests should or should not be processed
    * - M
      - :ref:`-(MO|Modules) <MO>`
      - include modules to load to batch job script
    * - B
      - :ref:`-(EV|Environments) <EV>`
-     - include environment vairables to load to batch job script
+     - environment variables to load in batch job script
    * - Q
      - :ref:`-(QS|QsubOptions) <QS>`
      - additional PBS batch options for qsub
@@ -141,8 +141,8 @@ input of '%' for matching any number of characters.
 
 If dataset number is not given, only the request control records, owned by the
 specialist who executes this getting control Action of **dsrqst**, are gathered.
-To view request control records owned by another specialist, you need specify :ref:`Info <section5>`
-option :ref:`-SN <SN>` (-Specialist) for that specialist. To view all request control records,
+To view request control records owned by another specialist, you need to specify
+:ref:`Info option <section5>` :ref:`-SN <SN>` (-Specialist) for that specialist. To view all request control records,
 you simply provide option :ref:`-SN <SN>` with value of 'ALL'.
 
 

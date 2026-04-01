@@ -19,7 +19,7 @@ partitions.
 |          [:ref:`-(RN|RequestName) <RN>` RequestNames]
 |          [:ref:`-(PI|PartitionIndex) <PI>` PartitionIndices]
 |          [:ref:`-(TI|TarfileIndex) <TI>` TarFileIndices]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(GI|GroupIndex) <GI>` GroupIndices]
 |          [:ref:`-(OT|SourceType) <OT>` SourceDataType]
 |          [:ref:`-(WF|WebFile) <WF>` DataFileNames]
@@ -42,7 +42,7 @@ partitions.
    :header-rows: 0
 
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - format the column output with a fix width for all values of a given field
+     - format the column output with a fixed width for all values of a given field
    * - :ref:`-(WD|WithDataset) <WD>`
      - show Dataset ID for each request file
 
@@ -60,23 +60,23 @@ Valid field names of data files and their corresponding :ref:`Info option <secti
      - :ref:`Info Options <section5>`
      - Descriptions
    * - R
-     - :ref:`-(RI|ReuqstIndex) <RI>`
+     - :ref:`-(RI|RequestIndex) <RI>`
      - data request index
    * - Q
      - :ref:`-(RN|RequestName) <RN>`
      - request name/ID
    * - P
-     - :ref:`-(PI|ParitionIndex) <PI>`
+     - :ref:`-(PI|PartitionIndex) <PI>`
      - request partition index
    * - T
      - :ref:`-(TI|TarfileIndex) <TI>`
-     - tarfile index for this small file is tarred
+     - tarfile index when this small file is tarred
    * - I
      - :ref:`-(GI|GroupIndex) <GI>`
      - group index
    * - B
      - :ref:`-(DS|Dataset) <DS>`
-     - dataset name/ID, dsnnn.n
+     - dataset name/ID, dNNNNNN
    * - L
      - :ref:`-(SL|SourceLink) <SL>`
      - source file name
@@ -97,7 +97,7 @@ Valid field names of data files and their corresponding :ref:`Info option <secti
      - data file size
    * - C
      - :ref:`-(PC|ProcessCommand) <PC>`
-     - command to process this reuqest file
+     - command to process this request file
    * - M
      - :ref:`-(DF|DataFormat) <DF>`
      - data format, i.e. GRIB, NetCDF
@@ -126,8 +126,8 @@ option :ref:`-RI <RI>` (-RequestIndex) or partition indices per option :ref:`-PI
 Status of a data file record is initially set to 'R' as requested at the time
 a request is submitted. It is changed to 'O' as online after the request is
 processed and the data file is staged online for download. If a copy of the
-same data file is online already for another request, this data file is shared
-instead of a new copy is staged.
+same data file is already online for another request, the data file is shared
+instead of staging a new copy.
 
 
 .. _3.2.6_e7:
