@@ -49,7 +49,7 @@ that help to submit, change request status, and check request status online are
 described at the end of the document.
 
 All **dsrqst** configuration can be managed via online interface,
-https://rda.ucar.edu/interl/rda_config
+https://gdex.ucar.edu/rda_pg_config
 under the entry of DSRQST.
 
 
