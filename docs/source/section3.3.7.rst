@@ -14,7 +14,7 @@ interrupts requests that are currently queued by
 changing their status to 'I', for Interrupted, and kills recursively all
 the child processes that are running to build the requests.
 
-| **dsrqst** -(:ref:`-IR <IR>`|InterruptRequest) [:ref:`Mode Option <mode3.3.7>`]
+| **dsrqst** -(IR|InterruptRequest) [:ref:`Mode Option <mode3.3.7>`]
 |            :ref:`-(RI|RequestIndex) <RI>` RequestIndices
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 

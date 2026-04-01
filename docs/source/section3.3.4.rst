@@ -19,7 +19,7 @@ purge date/time, the action simply re-publishes the request filelist.
 |          [:ref:`-(RN|RequestName) <RN>` RequestNames]
 |          [:ref:`-(DP|DatePurge) <DP>` DateDuePurge]
 |          [:ref:`-(TP|TimePurge) <TP>` TimeDuePurge]
-|          [-(:ref:`LN <LN>`|LoginName SpecialistLoginName)
+|          [:ref:`-(LN|LoginName) <LN>` SpecialistLoginName]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
 .. _mode3.3.4:
@@ -33,7 +33,7 @@ purge date/time, the action simply re-publishes the request filelist.
    * - :ref:`-(GZ|GMTZone) <GZ>`
      - uses GMT dates/times as controlling times
    * - :ref:`-(WE|WithEmail) <WE>`
-     - forces to send email to requester after the filelist being republished
+     - forces sending email to requester after the filelist is republished
 
 Use this action, rather than :ref:`-SR <SR>` (-SetRequest), to change the purge date/time
 when the purge date/time shown on web page for the data files staged

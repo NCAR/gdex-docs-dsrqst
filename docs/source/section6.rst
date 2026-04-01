@@ -11,7 +11,7 @@ Several online utility programs are created to complement **dsrqst** for:
    :header-rows: 0
 
    * - Program 'dsrqst.php'
-     - generates new request records according information passed in via HTTP POST entries, get online help information at https://rda.ucar.edu/php/dsrqst.php
+     - generates new request records according to information passed in via HTTP POST entries; get online help at https://gdex.ucar.edu/php/dsrqst.php
    * - Program 'wqrqst.php'
      - puts waiting requests in queue to grant permissions for the specialist-controlled requests to be processed
    * - Program 'ckrqst.php'

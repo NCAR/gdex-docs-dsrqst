@@ -7,7 +7,7 @@
 A request control record for a dataset and/or a group index is a starting
 point to set the dataset/group under **dsrqst** control for a specified request type.
 An "M" type control record for a specified dataset, or even further for a
-specified group index, allow users who have permission to view the HPSS filelists
+specified group index, allows users who have permission to view the HPSS filelists
 to submit requests for online downloads of the associated HPSS data.
 
 Request control information can be created, modified and viewed via Actions
@@ -26,9 +26,9 @@ included in this section:
    * - Get Source File information
      - retrieve including source file information
    * - Set Source File information
-     - addd new or modify including source file information
+     - add new or modify including source file information
    * - Delete Source File Information
-     - delete one or multiple including source file records of an specified request control
+     - delete one or multiple including source file records of a specified request control
 
 .. toctree::
    :maxdepth: 1

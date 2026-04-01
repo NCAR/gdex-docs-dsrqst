@@ -20,7 +20,7 @@ partitions.
 |          [:ref:`-(PI|PartitionIndex) <PI>` PartitionIndices]
 |          [:ref:`-(TI|TarfileIndex) <TI>` TarFileIndices]
 |          [:ref:`-(WF|WebFile) <WF>` TarFileNames]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(GI|GroupIndex) <GI>` GroupIndices]
 |          [:ref:`-(SZ|Size) <SZ>` TarFileSize]
 |          [:ref:`-(DF|DataFormat) <DF>` DataFormat]
@@ -39,7 +39,7 @@ partitions.
    :header-rows: 0
 
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - format the column output with a fix width for all values of a given field
+     - format the column output with a fixed width for all values of a given field
    * - :ref:`-(WD|WithDataset) <WD>`
      - show Dataset ID for each request tar file
 
@@ -58,22 +58,22 @@ Valid field names of tar files and their corresponding :ref:`Info option <sectio
      - Descriptions
    * - T
      - :ref:`-(TI|TarfileIndex) <TI>`
-     - tarfile index for this small file is tarred
+     - tarfile index when this small file is tarred
    * - R
-     - :ref:`-(RI|ReuqstIndex) <RI>`
+     - :ref:`-(RI|RequestIndex) <RI>`
      - data request index
    * - Q
      - :ref:`-(RN|RequestName) <RN>`
      - request name/ID
    * - P
-     - :ref:`-(PI|ParitionIndex) <PI>`
+     - :ref:`-(PI|PartitionIndex) <PI>`
      - request partition index
    * - I
      - :ref:`-(GI|GroupIndex) <GI>`
      - group index
    * - B
      - :ref:`-(DS|Dataset) <DS>`
-     - dataset name/ID, dsnnn.n
+     - dataset name/ID, dNNNNNN
    * - F
      - :ref:`-(WF|WebFile) <WF>`
      - tar file name

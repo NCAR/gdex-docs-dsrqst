@@ -10,11 +10,11 @@
 Action Option -**SF** (-**SetFile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-creates and modifies data file information into RDADB for
+creates and modifies data file information into GDEXDB for
 given dataset/group(s)/file(s) of a specified request index. One or multiple
 remote files can be processed each time.
 
-Although a data file record can be modified by a specialist, it is raely
+Although a data file record can be modified by a specialist, it is rarely
 needed. A data file record is normally either generated per Web interfaces
 that accept submission of data requests or built per subsetting programs.
 
@@ -22,7 +22,7 @@ that accept submission of data requests or built per subsetting programs.
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]
 |          [:ref:`-(PI|PartitionIndex) <PI>` PartitionIndices]
 |          [:ref:`-(TI|tarFileIndex) <TI>` TarfileIndices]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(GI|GroupIndex) <GI>` GroupIndices]
 |          [:ref:`-(SL|SourceLink) <SL>` SourceDataID]
 |          [:ref:`-(OT|SourceType) <OT>` SourceDataType]
@@ -45,7 +45,7 @@ that accept submission of data requests or built per subsetting programs.
    :header-rows: 0
 
    * - :ref:`-(MD|MyDataset) <MD>`
-     - sets information into RDADB no matter the specialist who runs **dsrqst** owns the dataset or not
+     - sets information into GDEXDB no matter the specialist who runs **dsrqst** owns the dataset or not
    * - :ref:`-(RO|ResetOrder) <RO>`
      - resets the display order indices of the data file records according to the order as they are given per option :ref:`-WF <WF>` (-WebFile)
 

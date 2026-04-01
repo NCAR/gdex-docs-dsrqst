@@ -10,10 +10,10 @@
 Action Option -**ST** (-**SetTarfile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-modifies tar file information into RDADB for given
+modifies tar file information into GDEXDB for given
 condition. One or multiple tar files can be processed each time.
 
-Although a tar file record can be modified by a specialist, it is raely
+Although a tar file record can be modified by a specialist, it is rarely
 needed. Tar file records are normally generated for a successfully-built
 request with many small data files.
 
@@ -21,7 +21,7 @@ request with many small data files.
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]
 |          [:ref:`-(PI|PartitionIndex) <PI>` PartitionIndices]
 |          [:ref:`-(TI|tarFileIndex) <TI>` TarfileIndices]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(GI|GroupIndex) <GI>` GroupIndices]
 |          [:ref:`-(WF|WebFile) <WF>` DataFileNames]
 |          [:ref:`-(SZ|Size) <SZ>` DataFileSize]
@@ -41,7 +41,7 @@ request with many small data files.
    :header-rows: 0
 
    * - :ref:`-(MD|MyDataset) <MD>`
-     - sets information into RDADB no matter the specialist who runs **dsrqst** owns the dataset or not
+     - sets information into GDEXDB no matter the specialist who runs **dsrqst** owns the dataset or not
    * - :ref:`-(RO|ResetOrder) <RO>`
      - resets the display order indices of the tar file records according to the order as they are given per option :ref:`-WF <WF>` (-WebFile)
 

@@ -16,11 +16,11 @@ current status of a list of requests.
 | **dsrqst** -(ER|EmailRequest)
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]
 |          [:ref:`-(RN|RequestName) <RN>` RequestNames]
-|          [:ref:`-(DS|Dataset) <DS>` dsnnn.n]
+|          [:ref:`-(DS|Dataset) <DS>` dNNNNNN]
 |          [:ref:`-(EM|Email) <EM>` UserEmailAddresses]
-|          [:ref:`-(RT|ReuqestType) <RT>` RequestTypes]
+|          [:ref:`-(RT|RequestType) <RT>` RequestTypes]
 |          [:ref:`-(RS|RequestStatus) <RS>` RequestStatus]
-|          [:ref:`-(DQ|DateReuqest) <DQ>` DateRequestSubmit]
+|          [:ref:`-(DQ|DateRequest) <DQ>` DateRequestSubmit]
 |          [:ref:`-(DR|DateReady) <DR>`   DateRequestProcess]
 |          [:ref:`-(DP|DatePurge) <DP>` DateRequestPurge]
 |          [:ref:`-(DF|DataFormat) <DF>`  DefaultDataFormat]
@@ -30,8 +30,8 @@ current status of a list of requests.
 |          [:ref:`-(CC|CarbonCopy) <CC>` Cc'dEmailAddresses]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-As default, status of up to 20 requests are included in an email. To include
-more requests you change the limit via :ref:`Info option <section5>` :ref:`-EL <EL>` (-EmailLimit).
+By default, status of up to 20 requests is included in an email. To include
+more requests, change the limit via :ref:`Info option <section5>` :ref:`-EL <EL>` (-EmailLimit).
 
 
 

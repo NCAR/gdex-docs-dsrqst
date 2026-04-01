@@ -4,17 +4,17 @@
 3 - ACTION OPTIONS
 =================================
 
-Action options are used to specify what tasks **dsrqst** executes. No values
-are allowed to follow Action options. Multiple tasks may be processed with a
-single execution of **dsrqst** depending on what Action option is chosen. Some of
-the comprehensive actions include automatically other simpler actions as
-default; and others include additional actions when certain :ref:`Mode options <section4>` are
-present. Multiple Action options provided simultaneously are blocked.
+Action options specify what tasks **dsrqst** executes. No values should follow
+Action options. Multiple tasks may be processed with a single execution of
+**dsrqst** depending on what Action option is chosen. Some comprehensive actions
+automatically include other simpler actions by default; and others include
+additional actions when certain :ref:`Mode options <section4>` are present. Providing multiple
+Action options simultaneously is not allowed.
 
-Some actions are setting information into and some getting information from
-RDADB for one or multiple datasets.
+Some actions set information into and some retrieve information from GDEXDB for
+one or multiple datasets.
 
-Based on the information being manipulated, the actions are divided into four
+Based on the information being manipulated, the actions are divided into three
 categories:
 
 .. list-table::
@@ -22,11 +22,11 @@ categories:
    :header-rows: 0
 
    * - :ref:`Request Control Actions <section3.1>`
-     - create, delete, modify and retrieve request control information in RDADB, of a given dataset/group and a request type,
+     - create, delete, modify and retrieve request control information in GDEXDB, of a given dataset/group and a request type,
    * - :ref:`Request Actions <section3.2>`
      - create, delete, modify and retrieve request information of individual requests and the requested data files
    * - :ref:`Request Process Actions <section3.3>`
-     - build requests by staging HPSS data online and purge requests by clean request records and temporary online data
+     - build requests by staging HPSS data online and purge requests by cleaning request records and temporary online data
 
 .. toctree::
    :maxdepth: 2

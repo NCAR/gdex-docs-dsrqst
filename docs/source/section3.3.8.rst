@@ -14,7 +14,7 @@ interrupts request partitions that are currently
 queued by changing their status to 'I', for Interrupted, and kills recursively
 all the child processes that are running to process the partitions.
 
-| **dsrqst** -(:ref:`-IP <IP>`|InterruptPartition) [:ref:`Mode Option <mode3.3.8>`]
+| **dsrqst** -(IP|InterruptPartition) [:ref:`Mode Option <mode3.3.8>`]
 |            :ref:`-(PI|PartitionIndex) <PI>` PartitionIndices
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
