@@ -4,7 +4,7 @@
 3.3 - Request Process Actions
 =================================
 
-In addition to being started by the centralized daemon 'dscheck', request processes
+In addition to being started by the centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_, request processes
 can be started manually by DSS specialists by providing request indices while
 executing Action :ref:`-BR <BR>` (-BuildRequest) of **dsrqst**.
 A request can only be processed manually by a specialist who is listed as

@@ -17,7 +17,7 @@ Info Option -**BP** (-**BatchProcess**) (Aliases: -**d**, -**DelayedMode**) :
 delayed mode execution. When
 present, the **dsrqst** command is not executed right away, but the command
 information is recorded into GDEXDB instead and the command is executed later
-by the centralized daemon 'dscheck'. One or multiple host names can be specified
+by the centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_. One or multiple host names can be specified
 after option :ref:`-BP <BP>` to force the **dsrqst** command to be executed on or not on the hosts.
 For examples, '-d evans' to run on host 'evans'; '-d evans:mirage5' to run on
 hosts 'evans' and 'mirage5'; and '-d \!mirage1:mirage2' to run on all configured

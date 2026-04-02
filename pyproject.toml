@@ -6,7 +6,7 @@ build-backend = "flit_core.buildapi"
 name = "gdex-docs-dsarch"
 authors = [{name = "Zaihua Ji", email = "zji@ucar.edu"}]
 dynamic = ["version", "description"]
-version = "1.0.2"
+version = "1.0.3"
 description = "Documentation for dsrqst utility program in RDA Python package rda_python_dsrqst"
 
 [project.urls]
