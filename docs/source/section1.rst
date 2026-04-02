@@ -8,7 +8,7 @@ Program **dsrqst** is a utility for controlling and processing special data requ
 The current implementation supports online download requests of HPSS data for
 users who want to access the data via GDEX Web Server, and services of data subsets
 and data format conversions. The queued requests are normally controlled by the
-centralized daemon 'dscheck' to be processed on specified machines. The end
+centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_ to be processed on specified machines. The end
 products are staged on GDEX Server for users to access online or via NCAR internal
 computers directly.
 
@@ -20,8 +20,8 @@ This application is implemented to:
 * Optionally send email notices to specialists who are the primary owners of the datasets for which requests are submitted
 * Allow specialists to grant the requests, under the specialist-controlled mode, by clicking links in the email notices or by issuing commands at the Unix command line
 * Allow primary owners of the datasets under **dsrqst** control to temporarily transfer responsibility to other specialists, in case of vacation or other reasons when they cannot check email to grant requests for a period of time
-* Build queued requests, or process queued request partitions, via a centralized daemon 'dscheck'. The final requested data are staged on GDEX Server for online or background command-line access. Data files that are requested by multiple users are shared to reduce redundancy.
-* Purge online requests via the centralized daemon 'dscheck' or manually. Information about purged requests is recorded in GDEXDB and later gathered for data usage metrics via utility program 'viewrqstusage'.
+* Build queued requests, or process queued request partitions, via a centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_. The final requested data are staged on GDEX Server for online or background command-line access. Data files that are requested by multiple users are shared to reduce redundancy.
+* Purge online requests via the centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_ or manually. Information about purged requests is recorded in GDEXDB and later gathered for data usage metrics via utility program **viewrqstusage**.
 * Send an email notice to both the user who requested data and, optionally, to the specialist who processes the request, after a request is built successfully. A link in the email notice leads to the webpage of the file list ready for online download
 * Add an option on the online file list webpage to allow users to notify **dsrqst** when data downloads are finished so that their requests can be purged sooner
 * Modify file information for a specified request by adding or removing file records before the request is granted for processing
