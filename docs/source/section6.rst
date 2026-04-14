@@ -4,7 +4,7 @@
 6 - ONLINE UTILITY PROGRAMS
 =================================
 
-Several online utility programs are created to complement **dsrqst** for:
+Several online utility programs complement **dsrqst**:
 
 .. list-table::
    :widths: auto

@@ -4,8 +4,8 @@
 5.2 - Multi-Value Info Options
 =================================
 
-A multi-value Info option is used to pass multiple values for one Info option
-into **dsrqst**. At least one value must follow each multi-value option.
+A multi-value Info option passes multiple values for one Info option to
+**dsrqst**. At least one value must follow each multi-value option.
 
 
 .. _AF:
@@ -13,17 +13,16 @@ into **dsrqst**. At least one value must follow each multi-value option.
 Info Option -**AF** (-**ArchiveFormat**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-for file
-archiving formats of data files being staged onto GDEX Server for download.
-The file archive format indicates post-processing of a data file. COS blocking
-on the original data files, for option values, 'BI' - binary blocked, 'C1' or
-'CH' - ASCII/character blocked, are automatically unblocked for the data files
-and the COS block options are stripped from archive format values. Option
-value 'TAR' means a tarred file, 'Z' means a compressed file, 'GZ' means a
-gzipped file, and 'BZ2' means a file is compressed via bzip2. 'TAR.GZ', for
-example, means a file is tarred and then gzipped; the order is important. The
-maximum length of format string is 10. Additional characters are truncated
-for length longer than 10.
+file archiving
+formats of data files being staged onto GDEX Server for download. The file
+archive format indicates post-processing of a data file. COS blocking on the
+original data files — option values 'BI' (binary blocked), 'C1' or 'CH'
+(ASCII/character blocked) — is automatically unblocked and the COS block
+options are stripped from archive format values. Option value 'TAR' means a
+tarred file, 'Z' a compressed file, 'GZ' a gzipped file, and 'BZ2' a file
+compressed via bzip2. 'TAR.GZ', for example, means a file is tarred then
+gzipped; order is important. The maximum format string length is 10;
+additional characters are truncated.
 
 
 .. _CC:
@@ -31,23 +30,22 @@ for length longer than 10.
 Info Option -**CC** (-**CarbonCopy**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-provides one or more additional email addresses on the
-command line to receive Cc'd email notification of the request processing
-results. The carbon copy emails can be set in a request control record via
-:ref:`Action <section3>` :ref:`-SC <SC>` (-SetControl) to control who will be Cc'd for an email notice
-after a request is successfully built. It defaults to 'S' for the
-associated specialist only. Multiple emails can be specified in a single
-space-delimited string up to 255 characters. Set it to empty to stop carbon
-copy email.
+provides one or more additional email addresses to receive
+Cc'd notification of request processing results. Carbon copy emails can be set
+in a request control record via :ref:`Action <section3>` :ref:`-SC <SC>` (-SetControl) to control who is
+Cc'd for an email notice after a request is successfully built. It defaults to
+'S' for the associated specialist only. Multiple emails can be specified in a
+single space delimited string up to 255 characters. Set it to empty to stop
+carbon copy email.
 
-For DSS specialists, login usernames are acceptable instead of full email
-addresses; otherwise full email addresses are required for emails with
-domains other than 'ucar.edu'.
+For DECS specialists, login usernames are acceptable instead of full email
+addresses; otherwise full email addresses are required for emails with domains
+other than 'ucar.edu'.
 
 
 .. _5.2_e9:
 
-**EXAMPLE 9. To make a carbon copy email to 'schuster@ucar.edu' for processing results of request index 42, provide Info option -CC with login user name 'schuster':**
+**EXAMPLE 9. To carbon copy 'schuster@ucar.edu' for processing results of request index 42, provide Info option -CC with login user name 'schuster':**
 
 | **dsrqst** :ref:`BR <BR>` :ref:`-RI <RI>` 42 :ref:`-CC <CC>` schuster
 
@@ -66,9 +64,9 @@ control record when it is first added for a given dataset and/or group index.
 Info Option -**CM** (-**ControlMode**) (Alias: -**ControlMethod**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets request control :ref:`Mode <section4>` for a
-request control record. 'S' for specialist-control mode and 'A' for automated
-request mode.
+sets request control mode for a
+request control record. 'S' for specialist-controlled mode and 'A' for
+automated request mode.
 
 
 .. _DB:
@@ -78,12 +76,11 @@ Info Option -**DB** (-**Debug**) :
 
 turns on debug mode with specified information. This option
 accepts up to 3 values: debug level, debug log file path, and debug log file
-name. The debug level is mandatory. It can be a single integer value, for
-example, 1000 means to log debug messages for levels 1 to 1000; or a range
-of values, for example, 200-1000 means to log debug messages from levels 200
-to 1000. The default debug file path is '${DSSHOME}/dssdb/log' and the default
-debug file name is 'mydss.dbg'. Provide the second and third values for this
-option to override the defaults respectively.
+name. The debug level is mandatory. It can be a single integer value — for
+example, 1000 logs debug messages for levels 1 to 1000 — or a range such as
+200-1000, which logs messages from levels 200 to 1000. The default debug file
+path is '${DSSHOME}/dssdb/log' and the default debug file name is 'pgdss.dbg'.
+Provide the second and third values to override these defaults.
 
 
 .. _DE:
@@ -91,15 +88,15 @@ option to override the defaults respectively.
 Info Option -**DE** (-**Description**) (Aliases: -**Desc**, -**Note**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets readable descriptions for a request
-control, request partition, request record or a data file. Multiple lines are
-allowed for a description if it is passed in from an input file specified by
+sets readable descriptions for a
+request control, request partition, request record, or data file. Multiple
+lines are allowed for a description passed in from an input file specified by
 Info option :ref:`-IF <IF>` (-InputFile).
 
-Description for a request record is normally filled by passing 'rnote' to online
-utility program 'dsrqst.php'. Use html tags <p> and </p> to start and end the
-description for html text; without the leading <p>, html tags <pre> and </pre>
-are added to preserve the original text display format when it is displayed on
+Description for a request record is normally filled by passing 'rnote' to
+online utility program 'dsrqst.php'. Use html tags <p> and </p> to start and
+end the description for html text; without the leading <p>, html tags <pre>
+and </pre> are added to preserve the original text display format on the
 final request data output web page.
 
 
@@ -109,7 +106,7 @@ Info Option -**DF** (-**DataFormat**) (Aliases: -**ContentFormat**, -**InternalF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 data content
-format of files being staged on GDEX Server for download. This is content
+format of files being staged on GDEX Server for download. This is the content
 format of data files. For example, NetCDF, IMMA, etc.
 
 
@@ -118,8 +115,8 @@ format of data files. For example, NetCDF, IMMA, etc.
 Info Option -**DO** (-**DisplayOrder**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-for display order indices of data files of a given
-request. This Info option is ignored if :ref:`Mode option <section4>` :ref:`-RO <RO>` (-Reorder) is present.
+display order indices of data files for a given request.
+Ignored if :ref:`Mode option <section4>` :ref:`-RO <RO>` (-Reorder) is present.
 
 
 .. _DP:
@@ -127,9 +124,9 @@ request. This Info option is ignored if :ref:`Mode option <section4>` :ref:`-RO 
 Info Option -**DP** (-**DatePurge**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets a date for a request to be due for purging. A purge
-date is automatically set for a request when it is processed. Use this option
-to change it.
+sets a date when a request is due for purging. A purge
+date is automatically set when a request is processed. Use this option to
+change it.
 
 
 .. _DQ:
@@ -137,9 +134,9 @@ to change it.
 Info Option -**DQ** (-**DateRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets a date for a request when it is submitted. A request
-date is automatically set for a request when it is submitted. Use this option
-only if it needs to be changed.
+sets the date a request was submitted. A request date is
+automatically set when a request is submitted. Use this option only if it
+needs to be changed.
 
 
 .. _DR:
@@ -147,9 +144,9 @@ only if it needs to be changed.
 Info Option -**DR** (-**DateReady**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets a date for a request when its data files are ready
-online for download. A ready date is automatically set for a request when it
-is processed. Use this option only if it needs to be changed.
+sets the date when a request's data files are ready online
+for download. A ready date is automatically set when a request is processed.
+Use this option only if it needs to be changed.
 
 
 .. _DS:
@@ -165,8 +162,8 @@ provides one or multiple dataset IDs for some actions.
 Info Option -**EM** (-**Email**) (Aliases: -**RequestEmail**, -**RequestUserEmail**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets user email addresses in request records for users
-who submit the requests.
+sets user email addresses in request records for users who
+submit the requests.
 
 
 .. _EN:
@@ -175,15 +172,14 @@ Info Option -**EN** (-**EmailNotice**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 sets a file name for a specified email notice in a
-request control record or an individual request record, instead of
-the default email notice template. If a specified email template file is
-set for a request control record, all data requests under the control record
-will share the same email template file.
+request control record or an individual request record, overriding the default
+email notice template. If an email template file is set for a request control
+record, all data requests under that control record share the same template.
 
 The default email notice template file is $WebDownloadHome/notices/email_notice.
-Get a copy and edit it to have your own customized email file. Absolute path must
-be added to the file name if your template file is not in the standard directory
-$WebDownloadHome/notices/.
+Get a copy and edit it to create your own customized email file. An absolute
+path must be added to the file name if your template file is not in the
+standard directory $WebDownloadHome/notices/.
 
 
 .. _EO:
@@ -191,11 +187,11 @@ $WebDownloadHome/notices/.
 Info Option -**EO** (-**EmptyOutput**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets an empty output flag to control whether an email notice
-is sent to a public user who requested data but no data was generated for output. Valid values
-are: 'Y' allows sending email to user for empty output, and 'N' tells dsrqst
-to send email notice to specialist only for empty output. The default value is 'N'.
-A 'Y' can be set into request control record via :ref:`Action <section3>` :ref:`-SC <SC>` (-SetControl).
+sets an empty output flag controlling whether an email
+notice is sent to a public user whose request generated no output data. Valid
+values: 'Y' sends email to the user for empty output; 'N' sends the email
+notice to the specialist only. The default value is 'N'. A 'Y' can be set
+in a request control record via :ref:`Action <section3>` :ref:`-SC <SC>` (-SetControl).
 
 
 .. _EV:
@@ -203,12 +199,12 @@ A 'Y' can be set into request control record via :ref:`Action <section3>` :ref:`
 Info Option -**EV** (-**Environments**) (Alias: -**Envs**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Alias: -Envs), specifies environment variables, in form of
-VarName=VarValue and separated by ',', needed to be set to run **dsrqst** as a batch
-job. The environment variables will be set in the batch starting script.
+(Alias: -Envs), specifies environment variables, in the
+form VarName=VarValue separated by ',', to set when running **dsrqst** as a
+batch job. The environment variables are set in the batch starting script.
 
-An environment variable with a leading '!' is treated as an executable
-command and its returned string is used as a dynamically created variable string.
+An environment variable with a leading '!' is treated as an executable command
+and its returned string is used as a dynamically created variable string.
 
 
 .. _FC:
@@ -224,7 +220,7 @@ count of data files requested in a single request.
 Info Option -**FD** (-**FileDate**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-date of a data file staged online.
+date a data file was staged online.
 
 
 .. _FS:
@@ -241,7 +237,7 @@ statuses: 'R'equested, 'O'nline and 'E'rror.
 Info Option -**FT** (-**FileTime**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-time of a data file staged online.
+time a data file was staged online.
 
 
 .. _GI:
@@ -249,10 +245,9 @@ time of a data file staged online.
 Info Option -**GI** (-**GroupIndex**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-for group indices. This is considered only if a dataset
-is divided further into groups. Valid group index values are 1, 2, 3, ....,
-while 0 means actions for the whole dataset which is the default index value
-if it is not provided explicitly.
+group indices. Relevant only if a dataset is divided into
+groups. Valid group index values are 1, 2, 3, ...; 0 means actions for the
+whole dataset and is the default if not provided explicitly.
 
 
 .. _HN:
@@ -263,19 +258,20 @@ Info Option -**HN** (-**HostName**) (Alias: -**HostMachine**) :
 host machine names to set in request control records or
 individual request records. One or multiple host names can be set in a
 request control record. The hostname information in request control records
-controls on which machines the associated requests can or cannot be processed. An individual request can only be built on a specified machine if
-its host name field is set.
+controls on which machines the associated requests can or cannot be processed.
+An individual request can only be built on a specified machine if its host
+name field is set.
 
 
 .. _5.2_e10:
 
-**EXAMPLE 10. Set request control record of Control Index 67 of d540000 to control its associated requests to be processed on bross and evans only:**
+**EXAMPLE 10. Set request control record of Control Index 67 of d540000 to restrict its associated requests to be processed on bross and evans only:**
 
 | **dsrqst** :ref:`SC <SC>` :ref:`-CI <CI>` 67 :ref:`-HN <HN>` bross:evans
 
-Add '!' in front of the host names, as :ref:`-HN <HN>` \!bross:evans, to control the
-associated requests to be built on all available machines other than bross
-and evans. Character '!' needs to be escaped for passing in on command line.
+Add '!' in front of the host names, as :ref:`-HN <HN>` \!bross:evans, to restrict
+the associated requests to all available machines other than bross and
+evans. Character '!' must be escaped on the command line.
 
 
 .. _IF:
@@ -283,26 +279,25 @@ and evans. Character '!' needs to be escaped for passing in on command line.
 Info Option -**IF** (-**InputFile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-for input file names; one or multiple file names may be
-given on command line. Input files are used to hold all valid options and the
-associated values of Info options that need to be passed in for execution of
-**dsrqst**.
+input file names; one or multiple file names may be given
+on the command line. Input files hold all valid options and associated values
+for Info options to pass to **dsrqst** for execution.
 
-In an input file, lines starting with '#' are treated as comments;
-Option Names can be given either short, long or alias names. :ref:`Action <section3>` and :ref:`Mode <section4>`
-options are given in format of OptionName<!>. Single value Assignment is
-given in format of OptionName<=>OptionValue. One option is given on each line.
-Different setting sign of :ref:`Action <section3>` and :ref:`Mode options <section4>` can be provided by Info
-option -AO (-ActOption, default to <!>); and different equal sign of single
-value assignment can be provided by Info option :ref:`-ES <ES>`, (-EqualSign, default to
-'<=>'). Multi-value assignments can be given in columns delimited with
-separator specified per option -SP (-Separator, default to '<:>'). It starts
-with a column title line for multi-value option names and the rest holds
-values corresponding to each column titles. The value information stops at
-the end of the file or when a new column name line or another single value
+In an input file, lines starting with '#' are treated as comments.
+Option names can be given in short, long, or alias form. :ref:`Action <section3>` and :ref:`Mode <section4>`
+options are given in the format OptionName<!>. Single-value assignments use
+the format OptionName<=>OptionValue. One option is given per line.
+A different setting sign for :ref:`Action <section3>` and :ref:`Mode options <section4>` can be provided via Info
+option -AO (-ActOption, default '<!>'); a different equal sign for
+single-value assignments can be provided via Info option :ref:`-ES <ES>` (-EqualSign,
+default '<=>').  Multi-value assignments use columns delimited by the
+separator specified per option -SP (-Separator, default '<:>'). The first
+line is the column title line of multi-value option names; the rest holds
+values corresponding to each column title. Value information continues to the
+end of the file or stops when a new column name line or another single-value
 assignment appears. If the last column is a multi-line value field, an
-additional separator must be appended for each line, including the column
-title line to end lines properly.
+additional separator must be appended to each line, including the column
+title line, to terminate lines properly.
 
 
 .. _LF:
@@ -319,9 +314,9 @@ files for customized data.
 Info Option -**LM** (-**RequestLimit**) (Alias: -**UpLimit**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0 means to use the system default 40 GB limit. It sets
-the upper limit in GB of data that can be requested each time. This
-limit should be checked and validated before a request is submitted.
+0 means to use the system default 40 GB limit. Sets the
+upper limit in GB of data that can be requested at one time. This limit should
+be checked and validated before a request is submitted.
 
 
 .. _MO:
@@ -330,8 +325,8 @@ Info Option -**MO** (-**Modules**) (Alias: -**Mods**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (Alias: -Mods), specifies module names, separated by ',',
-needed to be loaded to run **dsrqst** as a batch job. The modules will be set
-in the batch starting script.
+to load when running **dsrqst** as a batch job. The modules are set in the
+batch starting script.
 
 A module name with a leading '!' is treated as an executable command and its
 returned string is used as a dynamically created module name string.
@@ -343,8 +338,8 @@ Info Option -**MP** (-**MaxPeriod**) (Alias: -**MaxrequestPeriod**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 sets the maximum default request period on the request
-interface to avoid a default large request job. Valid example values
-are 5Y or 10M for periods of 5 Years or 10 Months, respectively.
+interface to prevent a default large request job. Valid example values are
+5Y or 10M for periods of 5 Years or 10 Months, respectively.
 
 
 .. _MR:
@@ -352,11 +347,11 @@ are 5Y or 10M for periods of 5 Years or 10 Months, respectively.
 Info Option -**MR** (-**MaxRequest**) (Alias: -**MaximumRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-max number of outstanding requests
-allowed for a single dsrqst control record from an individual user. It defaults
-to 20. A positive value, such as 10, can be set via :ref:`Action <section3>` :ref:`-SC <SC>` (-SetControl)
-into request control record. If the max number is reached, additional requests
-are denied until any of the outstanding requests are purged or deleted.
+max number of outstanding
+requests allowed for a single dsrqst control record from an individual user.
+Defaults to 20. A positive value, such as 10, can be set via :ref:`Action <section3>` :ref:`-SC <SC>`
+(-SetControl) in the request control record. If the max number is reached,
+additional requests are denied until outstanding requests are purged or deleted.
 
 
 .. _OB:
@@ -364,12 +359,11 @@ are denied until any of the outstanding requests are purged or deleted.
 Info Option -**OB** (-**OrderBy**) (Alias: -**OrderByPattern**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-temporal patterns used to order
-filelist according to the string values of field names specified per
-option :ref:`-ON <ON>` (-OrderNames). 'YYYYmon', for example, means the order should
-be based on a 4-digit year and three-letter lowercase month names such as 'jan',
-'feb', etc. Check option :ref:`-ON <ON>` (-OrderNames) for examples of ordering
-files by temporal patterns.
+temporal patterns for ordering a
+filelist according to the string values of field names specified per option
+:ref:`-ON <ON>` (-OrderNames). 'YYYYmon', for example, means ordering based on a 4-digit
+year and three-letter lowercase month names such as 'jan', 'feb', etc. Check
+option :ref:`-ON <ON>` (-OrderNames) for examples of ordering files by temporal patterns.
 
 
 .. _OR:
@@ -377,8 +371,8 @@ files by temporal patterns.
 Info Option -**OR** (-**ORiginFile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-original file name with path set in source file record. This
-value is used if the source link is empty.
+original file name with path set in source file record.
+This value is used if the source link is empty.
 
 
 .. _OT:
@@ -386,7 +380,7 @@ value is used if the source link is empty.
 Info Option -**OT** (-**SourceType**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-original data type, 'M' for data on HPSS.
+original data type; 'W' for data on Web Server.
 
 
 .. _PC:
@@ -394,8 +388,8 @@ original data type, 'M' for data on HPSS.
 Info Option -**PC** (-**ProcessCommand**) (Aliases: -**Command**, -**SpecialCommand**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets customized command to
-build requests, process partitions or process individual files.
+sets customized command to build
+requests, process partitions, or process individual files.
 
 
 .. _PF:
@@ -403,13 +397,13 @@ build requests, process partitions or process individual files.
 Info Option -**PF** (-**PartitionFlag**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets partition command call flag for subsetting request,
-N - call customized command, in form of 'CustomizedCommand RequestIndex',
-to initialize filelist only, no need for further command calls during partition
-process or final request build; P - call customized command, in form of
-'CustomizedCommand RequestIndex WorkPath PartitionIndex', also to process
-partition data; F - call customized command, in form of
-'CustomizedCommand RequestIndex WorkPath', to build request data finally;
+sets partition command call flag for subset request.
+N - call customized command in the form 'CustomizedCommand RequestIndex' to
+initialize the filelist only, with no further command calls during partition
+process or final request build; P - call customized command in the form
+'CustomizedCommand RequestIndex WorkPath PartitionIndex' to also process
+partition data; F - call customized command in the form
+'CustomizedCommand RequestIndex WorkPath' to build request data finally;
 B - for both P and F.
 
 
@@ -427,7 +421,7 @@ partition record when it is first added.
 Info Option -**PL** (-**PartitionLimit**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets number of files for each partition in request
+sets the number of files per partition in request
 control configuration via action :ref:`-SC <SC>` (-SetControl).
 
 
@@ -436,8 +430,8 @@ control configuration via action :ref:`-SC <SC>` (-SetControl).
 Info Option -**PZ** (-**PartitionsiZe**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets data size for each partition in request
-control configuration via action :ref:`-SC <SC>` (-SetControl).
+sets the data size per partition in request control
+configuration via action :ref:`-SC <SC>` (-SetControl).
 
 
 .. _PO:
@@ -454,8 +448,8 @@ process priority of queued requests. Default value is 10;
 Info Option -**PS** (-**PartitionStatus**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-partition status for request partition record. 'I' for
-an inclusive condition and 'E' for an exclusive condition.
+partition status for request partition record. 'I'
+for an inclusive condition and 'E' for an exclusive condition.
 
 
 .. _QS:
@@ -463,9 +457,9 @@ an inclusive condition and 'E' for an exclusive condition.
 Info Option -**QS** (-**QSubOptions**) (Alias: -**PBSOptions**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Alias: -PBSOptions), specifies options to run **dsrqst** as
-a batch job via qsub on PBS nodes. The qsub options must be quoted when presented
-on the command line, such as, :ref:`-QS <QS>` '-l walltime=12:00:00'.
+(Alias: -PBSOptions), specifies options for running
+**dsrqst** as a batch job via qsub on PBS nodes. The qsub options must be
+quoted on the command line, such as :ref:`-QS <QS>` '-l walltime=12:00:00'.
 
 A qsub option string with a leading '!' is treated as an executable command
 and its returned string is used as a dynamically created qsub option string.
@@ -478,8 +472,8 @@ Info Option -**RF** (-**RequestInfo**) (Alias: -**RequestInformation**) :
 
 sets additional request
 information for a request record, such as detailed subsetting information.
-The request information is normally filled by passing 'rinfo' to online
-utility program 'dsrqst.php'.
+Request information is normally filled by passing 'rinfo' to online utility
+program 'dsrqst.php'.
 
 
 .. _RI:
@@ -514,10 +508,10 @@ of the user's uppercased last name and the request index.
 Mode Option -**RO** (-**ResetOrder**) (Alias: -**Reorder**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-when present, resets the display orders
-of the data files in a request to match the order in which data file records
-are given for :ref:`Action <section3>` :ref:`-SF <SF>` (-SetFile). Another way of reordering the data files
-is to explicitly provide display order index values per Info option :ref:`-DO <DO>`
+resets the display orders of the data
+files in a request to match the order in which data file records are given
+for :ref:`Action <section3>` :ref:`-SF <SF>` (-SetFile). Another way of reordering the data files is to
+explicitly provide display order index values per Info option :ref:`-DO <DO>`
 (-DisplayOrder).
 
 
@@ -535,10 +529,10 @@ statuses: 'W'ait, 'Q'ueue, 'O'nline, 'I'nterrupted, 'H'old, 'P'urge and 'E'rror.
 Info Option -**RT** (-**RequestType**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-type of request. Valid types, M - HPSS data, S - Subset data,
-T - Subset/Format Conversion, F - Format Conversion (Web), H - Format Conversion
-(HPSS), P - Data Plotting, C - Customized Data, D - CDP link, N - NCARDAP
-(THREDDS) Data Server, Q - Database Query, and R - Realtime Data Download.
+type of request. Valid types: S - Subset data,
+T - Subset/Format Conversion, F - Format Conversion (Web), P - Data Plotting,
+C - Customized Data, D - CDP link, N - NCARDAP (THREDDS) Data Server,
+Q - Database Query, and R - Realtime DataDownload.
 
 
 .. _SI:
@@ -554,8 +548,7 @@ size of original data required for a request.
 Info Option -**SL** (-**SourceLink**) (Alias: -**SourceID**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-a file name of original data. For type 'M' request,
-this is a HPSS file name; for type 'W', it is a web file.
+file name of original data. For type 'W', it is a web file.
 
 
 .. _SN:
@@ -565,9 +558,8 @@ Info Option -**SN** (-**Specialist**) :
 
 sets the login name of a specialist in GDEXDB for request
 control records and request records. When the requests are handled, the system
-login name is validated against the one saved in GDEXDB; the request
-handling processes, both building and purging requests, are blocked if they
-do not match.
+login name is validated against the one saved in GDEXDB; request handling
+processes — both building and purging — are blocked if they do not match.
 
 
 .. _SQ:
@@ -592,8 +584,8 @@ file size of each data file online.
 Info Option -**TA** (-**TarFlag**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-a field in request control and request record, 'Y' to tar small
-request files, or 'N' for no.
+a field in request control and request records. 'Y' to tar
+small request files, or 'N' for no.
 
 
 .. _TF:
@@ -601,13 +593,13 @@ request files, or 'N' for no.
 Info Option -**TF** (-**ToFormat**) (Aliases: -**OutputFormat**, -**ProductFormat**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-string of ':' delimited
-data format(s) of output files being staged on GDEX Server for download after
-conversion of data files or subsetting results. These are content formats of
-output data files. For example, NETCDF:GRIB.
+':' delimited string
+of data format(s) for output files staged on GDEX Server for download after
+format conversion or subsetting. These are content formats of output data
+files. For example, NETCDF:GRIB.
 
-NOTE: the output format(s) set via this option must be supported by
-the underlying format conversion commands for full data files or subsetting
+NOTE: the output format(s) set via this option must be supported by the
+underlying format conversion commands for full data files or subsetting
 outputs.
 
 
@@ -625,9 +617,9 @@ record when small request files are tarred.
 Info Option -**TP** (-**TimePurge**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets a time for a request to be due for purging. A purge
-time is automatically set for a request when it is processed. Use this option
-to change it.
+sets a time when a request is due for purging. A purge
+time is automatically set when a request is processed. Use this option to
+change it.
 
 
 .. _TQ:
@@ -635,9 +627,9 @@ to change it.
 Info Option -**TQ** (-**TimeRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets a time for a request when it is submitted. A request
-time is automatically set for a request when it is submitted. Use this option
-only if it needs to be changed.
+sets the time a request was submitted. A request time is
+automatically set when a request is submitted. Use this option only if it
+needs to be changed.
 
 
 .. _TR:
@@ -645,9 +637,9 @@ only if it needs to be changed.
 Info Option -**TR** (-**TimeReady**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets a time for a request when its data files are ready
-online for download. A ready time is automatically set for a request when it
-is processed. Use this option only if it needs to be changed.
+sets the time when a request's data files are ready online
+for download. A ready time is automatically set when a request is processed.
+Use this option only if it needs to be changed.
 
 
 .. _UA:
@@ -656,7 +648,7 @@ Info Option -**UA** (-**URL**) (Aliases: -**URLAddress**, -**URLLink**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 provides a URL link as an initial
-webpage for this specified request.
+webpage for the specified request.
 
 
 .. _VP:
@@ -664,7 +656,7 @@ webpage for this specified request.
 Info Option -**VP** (-**ValidPeriod**) (Alias: -**DataValidPeriod**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-defaults to 5 days. It sets the number of days the data
+defaults to 5 days. Sets the number of days the data
 files are staged online. After this period, requests are due to be purged.
 
 
@@ -681,8 +673,9 @@ data file name staged online.
 Info Option -**WH** (-**WebHomeDir**) (Aliases: -**WebHome**, -**DownloadHome**, -**OnlineHome**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-specify a download directory on
-GDEX Server to stage the temporary data files for the download/archive activity.
+specifies a download
+directory on GDEX Server to stage temporary data files for the
+download/archive activity.
 
 
 .. _WT:

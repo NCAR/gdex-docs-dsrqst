@@ -22,9 +22,7 @@ for a given request. One or multiple records can be processed each time.
 |          [:ref:`-(DO|DisplayOrder) <DO>` PartitionDisplayOrder]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.5:
-
-:ref:`Mode options <section4>` that can be specified for setting partition Action:
+Available mode options:
 
 .. list-table::
    :widths: auto
@@ -35,8 +33,8 @@ for a given request. One or multiple records can be processed each time.
    * - :ref:`-(NP|NewPartition) <NP>`
      - adds new partition records into GDEXDB for a given request
 
-Partitions cannot be added again if partition information of a request exists
-already. Specify request index per option :ref:`-RI <RI>` (-RequestIndex) and :ref:`Mode <section4>` option
+Partitions cannot be added again if partition information for a request already
+exists. Specify request index per option :ref:`-RI <RI>` (-RequestIndex) and :ref:`Mode <section4>` option
 :ref:`-NP <NP>` (-NewPartition) to add partitions.
 
 

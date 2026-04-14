@@ -22,11 +22,11 @@ categories:
    :header-rows: 0
 
    * - :ref:`Request Control Actions <section3.1>`
-     - create, delete, modify and retrieve request control information in GDEXDB, of a given dataset/group and a request type,
+     - create, delete, modify and retrieve request control information in GDEXDB, of a given dataset/group and a request type
    * - :ref:`Request Actions <section3.2>`
      - create, delete, modify and retrieve request information of individual requests and the requested data files
    * - :ref:`Request Process Actions <section3.3>`
-     - build requests by staging HPSS data online and purge requests by cleaning request records and temporary online data
+     - build requests by staging data online and purge requests by cleaning request records and temporary online data
 
 .. toctree::
    :maxdepth: 2

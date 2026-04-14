@@ -10,8 +10,8 @@
 Action Option -**BR** (-**BuildRequest**) (Alias: -**ProcessRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-an action to process one or
-multiple individual requests with specified request indices.
+processes one or multiple
+individual requests with specified request indices.
 
 | **dsrqst** -(BR|BuildRequest) [:ref:`Mode Options <mode3.3.1>`]
 |           :ref:`-(RI|RequestIndex) <RI>` RequestIndices
@@ -24,9 +24,7 @@ multiple individual requests with specified request indices.
 |          [:ref:`-(LN|LoginName) <LN>` SpecialistLoginName]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.3.1:
-
-:ref:`Mode options <section4>` that can be specified for building request Action:
+Available mode options:
 
 .. list-table::
    :widths: auto
@@ -43,14 +41,14 @@ multiple individual requests with specified request indices.
    * - :ref:`-(NO|NotOnline) <NO>`
      - does not publish filelist after update and set request status to N
 
-A request must be in status "Q" (Queued) before it can be processed. To
-process a request, the DSS specialist must also be the owner of the request.
+A request must be in status "Q" (Queued) before it can be processed. The DECS
+specialist must also be the owner of the request.
 
-If a specialist needs to process a request owned by another specialist,
-use :ref:`Info option <section5>` :ref:`-LN <LN>` (-LoginName) to provide that specialist's login name.
+To process a request owned by another specialist, use :ref:`Info option <section5>` :ref:`-LN <LN>`
+(-LoginName) to provide that specialist's login name.
 
-Provide local files via :ref:`Info option <section5>` :ref:`-LF <LF>` (-LocalFile) to build Type 'C',
-Customized, request.
+Provide local files via :ref:`Info option <section5>` :ref:`-LF <LF>` (-LocalFile) to build a Type 'C'
+(Customized) request.
 
 If a customized request location is provided, the requested data are staged
 there and the request is purged immediately.

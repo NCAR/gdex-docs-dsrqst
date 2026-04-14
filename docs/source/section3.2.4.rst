@@ -12,9 +12,8 @@ Action Option -**GP** (-**GetPartition**) :
 
 retrieves request partition information for specified
 partitions or requests if the partition or request indices are provided,
-respectively. Without specified condition, the information of partitions,
-owned by the current specialist who executes this Action of **dsrqst**, are
-retrieved.
+respectively. Without a specified condition, partitions owned by the
+specialist who executes this Action are retrieved.
 
 | **dsrqst** -(GP|GetPartition) [:ref:`Mode Options <mode3.2.4>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -26,9 +25,7 @@ retrieved.
 |          [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.4:
-
-:ref:`Mode options <section4>` that can be specified for getting partition Action:
+Available mode options:
 
 .. list-table::
    :widths: auto
@@ -39,8 +36,8 @@ retrieved.
    * - :ref:`-(FO|FormatOutput) <FO>`
      - format the column output with a fixed width for all values of a given field
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what partition fields to be
-retrieved. It defaults to all available fields.
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which partition fields to
+retrieve. It defaults to all available fields.
 
 Valid field names of partitions and their corresponding :ref:`Info option <section5>` names:
 
@@ -71,17 +68,17 @@ Valid field names of partitions and their corresponding :ref:`Info option <secti
      - number of data files in a partition
    * - S
      - :ref:`-(SN|Specialist) <SN>`
-     - DSS specialist who owns the request record
+     - DECS specialist who owns the request record
 
-Request partition information can be retrieved for specified request indices per
-option :ref:`-RI <RI>` (-RequestIndex). If dataset and partition are not specified,
-partition records owned by the specialist who issues the getting partition Action
-of **dsrqst** are retrieved.
+Partition information can be retrieved for specified request indices per
+option :ref:`-RI <RI>` (-RequestIndex). If no dataset or partition is specified,
+partition records owned by the specialist who issues this Action are
+retrieved.
 
 
 .. _3.2.4_e6:
 
-**EXAMPLE 6. To get the partition information for default fields and owned by specialist login name 'zji':**
+**EXAMPLE 6. To get the partition information for default fields owned by specialist login name 'zji':**
 
 | **dsrqst** :ref:`GP <GP>` :ref:`-SN <SN>` zji
 

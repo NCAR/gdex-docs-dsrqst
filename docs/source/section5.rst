@@ -4,8 +4,8 @@
 5 - INFORMATION OPTIONS
 =================================
 
-Information options are used to pass information, one or multiple values, into
-**dsrqst**. Two types of Info options are used:
+Information options pass information, one or multiple values, into **dsrqst**.
+Two types of Info options are used:
 
 .. list-table::
    :widths: auto

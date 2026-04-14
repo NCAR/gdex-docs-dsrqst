@@ -11,25 +11,23 @@ Action Option -**IR** (-**InterruptRequest**) (Alias: -**InterRupt**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 interrupts requests that are currently queued by
-changing their status to 'I', for Interrupted, and kills recursively all
-the child processes that are running to build the requests.
+changing their status to 'I' (Interrupted) and recursively killing all child
+processes running to build the requests.
 
 | **dsrqst** -(IR|InterruptRequest) [:ref:`Mode Option <mode3.3.7>`]
 |            :ref:`-(RI|RequestIndex) <RI>` RequestIndices
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.3.7:
-
-:ref:`Mode option <section4>` that can be specified for this action:
+Available mode option:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`-(FI|ForceInterrupt) <FI>`
-     - it must be present for this action to interrupt a request that is under processing.
+     - must be present to interrupt a request that is currently under processing.
 
-It is mandatory to provide a request index to interrupt it.
+A request index is mandatory.
 
 
 

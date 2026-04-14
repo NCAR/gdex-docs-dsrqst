@@ -12,16 +12,16 @@ Action Option -**UL** (-**UnLock**) (Aliases: -**UnLockRequest**, -**UnLockParit
 
 unlocks requests whose building
 processes aborted abnormally. Process ID and computer hostname are saved in a
-request record temporarily when the request is under process. If the building
-process aborts abnormally, the PID and hostname are not cleaned. Use this action
-to clean up the PID information to allow the request to be rebuilt on a different
+request record while the request is under process. If the building process
+aborts abnormally, the PID and hostname are not cleaned. Use this action to
+clean up the PID information and allow the request to be rebuilt on a different
 host.
 
 | **dsrqst** -(UL|UnLockRequest)
 |            :ref:`-(RI|RequestIndex) <RI>` RequestIndices
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-It is mandatory to provide a request index to remove the lock on it.
+A request index is mandatory.
 
 
 

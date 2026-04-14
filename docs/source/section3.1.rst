@@ -4,11 +4,9 @@
 3.1 - Request Control Actions
 =================================
 
-A request control record for a dataset and/or a group index is a starting
-point to set the dataset/group under **dsrqst** control for a specified request type.
-An "M" type control record for a specified dataset, or even further for a
-specified group index, allows users who have permission to view the HPSS filelists
-to submit requests for online downloads of the associated HPSS data.
+A request control record for a dataset and/or a group index is the starting
+point for placing a dataset/group under **dsrqst** control for a specified
+request type.
 
 Request control information can be created, modified and viewed via Actions
 included in this section:
