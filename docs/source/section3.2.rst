@@ -6,7 +6,7 @@
 
 A request record and its associated data file records are normally generated
 from user submission of a data request via web interfaces to program
-'dsrqst.php' with HTTP POST entries, via command line program 'rdams'.
+'dsrqst.php' with HTTP POST entries, or via command line program 'rdams'.
 
 Request and data file information can be viewed and modified via Actions
 included in this section:

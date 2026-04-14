@@ -33,9 +33,7 @@ partitions.
 |          [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.6:
-
-:ref:`Mode options <section4>` that can be specified for getting request Action:
+Available mode options:
 
 .. list-table::
    :widths: auto
@@ -46,8 +44,8 @@ partitions.
    * - :ref:`-(WD|WithDataset) <WD>`
      - show Dataset ID for each request file
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what data file fields to be
-retrieved. It defaults to 'FRPTYSNMA' if option :ref:`-FN <FN>` is not provided. Data File
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which data file fields to
+retrieve. It defaults to 'FRPTYSNMA' if :ref:`-FN <FN>` is not provided. Data file
 information of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
 
 Valid field names of data files and their corresponding :ref:`Info option <section5>` names:
@@ -82,7 +80,7 @@ Valid field names of data files and their corresponding :ref:`Info option <secti
      - source file name
    * - Z
      - :ref:`-(OT|SourceType) <OT>`
-     - source data type, M - HPSS, W - Web
+     - source data type, W - Web
    * - Y
      - :ref:`-(WT|WebFileType) <WT>`
      - file type, Data, dOcument, Software
@@ -123,11 +121,11 @@ Valid field names of data files and their corresponding :ref:`Info option <secti
 Data file information can be retrieved for specified request indices per
 option :ref:`-RI <RI>` (-RequestIndex) or partition indices per option :ref:`-PI <PI>` (-PartitionIndex).
 
-Status of a data file record is initially set to 'R' as requested at the time
-a request is submitted. It is changed to 'O' as online after the request is
-processed and the data file is staged online for download. If a copy of the
-same data file is already online for another request, the data file is shared
-instead of staging a new copy.
+A data file record status is initially set to 'R' (requested) when a request
+is submitted. It changes to 'O' (online) after the request is processed and
+the data file is staged online for download. If a copy of the same data file
+is already online for another request, the data file is shared instead of
+staging a new copy.
 
 
 .. _3.2.6_e7:

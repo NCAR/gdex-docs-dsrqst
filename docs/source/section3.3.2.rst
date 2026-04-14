@@ -10,8 +10,8 @@
 Action Option -**PP** (-**ProcessPartition**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-an action to process one or multiple individual
-partitions with specified partition indices.
+processes one or multiple individual partitions
+with specified partition indices.
 
 | **dsrqst** -(PP|ProcessPartition) [:ref:`Mode Options <mode3.3.2>`]
 |           :ref:`-(PI|PartitionIndex) <PI>` PartitionIndices
@@ -23,9 +23,7 @@ partitions with specified partition indices.
 |          [:ref:`-(LN|LoginName) <LN>` SpecialistLoginName]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.3.2:
-
-:ref:`Mode options <section4>` that can be specified for processing partition Action:
+Available mode options:
 
 .. list-table::
    :widths: auto
@@ -42,8 +40,8 @@ partitions with specified partition indices.
    * - :ref:`-(NO|NotOnline) <NO>`
      - does not publish filelist after update and set request status to N
 
-A partition must be in status "Q" (Queued) before it can be processed. To
-process a partition, the DSS specialist must also be the owner of the partition.
+A partition must be in status "Q" (Queued) before it can be processed. The DECS
+specialist must also be the owner of the partition.
 
 
 

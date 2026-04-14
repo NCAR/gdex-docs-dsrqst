@@ -11,10 +11,10 @@ Action Option -**GC** (-**GetControl**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 retrieves request control information for given datasets,
-groups or request types. Request control information of specified specialists
-are retrieved if the specialist login names are provided. Without specified
-condition, the request control records owned by the specialist who runs
-**dsrqst** are retrieved.
+groups or request types. Request control information for specified specialists
+is retrieved if the specialist login names are provided. Without a specified
+condition, request control records owned by the specialist who runs **dsrqst**
+are retrieved.
 
 | **dsrqst** -(GC|GetControl) [:ref:`Mode Options <mode3.1.2>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -23,7 +23,7 @@ condition, the request control records owned by the specialist who runs
 |          [:ref:`-(GI|GroupIndex) <GI>` GroupIndices]
 |          [:ref:`-(RT|RequestType) <RT>` RequestTypes]
 |          [:ref:`-(CM|ControlMode) <CM>` ControlMode]
-|          [:ref:`-(SN|Specialist) <SN>` DSSSpecialists]
+|          [:ref:`-(SN|Specialist) <SN>` DECSSpecialists]
 |          [:ref:`-(PC|Command) <PC>`  ProcessCommand]
 |          [:ref:`-(EO|EmptyOutput) <EO>` EmptyOutputFlag]
 |          [:ref:`-(UA|URL) <UA>` URLLinks]
@@ -31,9 +31,7 @@ condition, the request control records owned by the specialist who runs
 |          [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.1.2:
-
-:ref:`Mode options <section4>` that can be specified for getting request control Action:
+Available mode option:
 
 .. list-table::
    :widths: auto
@@ -42,8 +40,8 @@ condition, the request control records owned by the specialist who runs
    * - :ref:`-(FO|FormatOutput) <FO>`
      - format the column output with a fixed width for all values of a given field
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what request control fields to be
-retrieved. It defaults to 'CTIRWGSPOUH' if option :ref:`-FN <FN>` is not provided. Request
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which request control fields to
+retrieve. It defaults to 'CTIRWGSPOUH' if :ref:`-FN <FN>` is not provided. Request
 control information of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
 
 Valid field names of request controls and their corresponding :ref:`Info <section5>` option
@@ -103,7 +101,7 @@ names:
      - Y to tar small request files
    * - S
      - :ref:`-(SN|Specialist) <SN>`
-     - DSS specialist who controls the requests
+     - DECS specialist who controls the requests
    * - P
      - :ref:`-(PC|Command) <PC>`
      - processing command provided by specialist
@@ -135,20 +133,19 @@ names:
      - :ref:`-(CC|CarbonCopy) <CC>`
      - Carbon copy emails; S - specialist only
 
-Request control information can be retrieved for specified datasets per option
-:ref:`-DS <DS>` (-Dataset), and/or other conditions. :ref:`Info option <section5>` :ref:`-DS <DS>` accepts wildcard
-input of '%' for matching any number of characters.
+Request control information can be retrieved for specified datasets per
+option :ref:`-DS <DS>` (-Dataset), and/or other conditions. :ref:`Info option <section5>` :ref:`-DS <DS>` accepts
+wildcard input of '%' for matching any number of characters.
 
-If dataset number is not given, only the request control records, owned by the
-specialist who executes this getting control Action of **dsrqst**, are gathered.
-To view request control records owned by another specialist, you need to specify
-:ref:`Info option <section5>` :ref:`-SN <SN>` (-Specialist) for that specialist. To view all request control records,
-you simply provide option :ref:`-SN <SN>` with value of 'ALL'.
+If no dataset number is given, only request control records owned by the
+specialist who executes this Action are gathered. To view records owned by
+another specialist, specify :ref:`Info option <section5>` :ref:`-SN <SN>` (-Specialist) for that
+specialist. To view all request control records, provide :ref:`-SN <SN>` with value 'ALL'.
 
 
 .. _3.1.2_e2:
 
-**EXAMPLE 2. To get all request control information currently available with all control fields under your control:**
+**EXAMPLE 2. To get all request control information with all control fields under your control:**
 
 | **dsrqst** :ref:`GC <GC>` :ref:`-FN <FN>` ALL
 

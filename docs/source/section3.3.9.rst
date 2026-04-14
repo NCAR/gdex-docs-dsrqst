@@ -10,17 +10,17 @@
 Action Option -**RR** (-**RestoreRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-restores one or multiple requests that have already been
-purged so they can be reprocessed.
+restores one or multiple purged requests so they can
+be reprocessed.
 
 dsrqst  :ref:`-(RR|RestoreRequest) <RR>`
 :ref:`-(RI|RequestIndex) <RI>` RequestIndices
 [:ref:`-(RS|RequestStatus) <RS>` RequestStatus]
 [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-The request status of the restored request records is set to 'W' for Wait as
-default, and it can be set to another value, such as 'Q' for Queue, if provided
-on the command line.
+The restored request records are set to status 'W' (Wait) by default, and
+can be set to another value, such as 'Q' (Queue), if provided on the command
+line.
 
 
 

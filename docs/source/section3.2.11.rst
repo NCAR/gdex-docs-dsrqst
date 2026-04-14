@@ -10,8 +10,8 @@
 Action Option -**ER** (-**EmailRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sends an email to the specialist who executes **dsrqst** for the
-current status of a list of requests.
+sends an email to the specialist who executes **dsrqst**
+with the current status of a list of requests.
 
 | **dsrqst** -(ER|EmailRequest)
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]

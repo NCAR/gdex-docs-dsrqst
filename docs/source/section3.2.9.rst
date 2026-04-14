@@ -30,9 +30,7 @@ partitions.
 |          [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.9:
-
-:ref:`Mode options <section4>` that can be specified for getting request Action:
+Available mode options:
 
 .. list-table::
    :widths: auto
@@ -43,8 +41,8 @@ partitions.
    * - :ref:`-(WD|WithDataset) <WD>`
      - show Dataset ID for each request tar file
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what tar file fields to be
-retrieved. It defaults to 'TFRPSMN' if option :ref:`-FN <FN>` is not provided. Tar File
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which tar file fields to
+retrieve. It defaults to 'TFRPSMN' if :ref:`-FN <FN>` is not provided. Tar file
 information of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
 
 Valid field names of tar files and their corresponding :ref:`Info option <section5>` names:

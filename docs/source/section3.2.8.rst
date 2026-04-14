@@ -18,9 +18,7 @@ given data file names.
 |           :ref:`-(FN|WebFile) <FN>` RequestFileNames
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.8:
-
-:ref:`Mode options <section4>` that can be specified for this action include:
+Available mode option:
 
 .. list-table::
    :widths: auto

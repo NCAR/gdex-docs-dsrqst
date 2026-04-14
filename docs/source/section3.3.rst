@@ -4,16 +4,16 @@
 3.3 - Request Process Actions
 =================================
 
-In addition to being started by the centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_, request processes
-can be started manually by DSS specialists by providing request indices while
-executing Action :ref:`-BR <BR>` (-BuildRequest) of **dsrqst**.
-A request can only be processed manually by a specialist who is listed as
-the one who controls the request.
+In addition to being started by the centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_, request
+processes can be started manually by DECS specialists by providing request
+indices when executing Action :ref:`-BR <BR>` (-BuildRequest) of **dsrqst**. A request
+can only be processed manually by the specialist listed as the one who
+controls the request.
 
 Data files of a processed request are staged on GDEX Server temporarily for
-online download or access via NCAR internal computers. A DSS specialist can also
-purge a request manually at due time by providing the request index to run
-**dsrqst** with Action :ref:`-PR <PR>` (-PurgeRequest).
+online download or access via NCAR internal computers. A DECS specialist can
+also purge a request manually at due time by providing the request index to
+run **dsrqst** with Action :ref:`-PR <PR>` (-PurgeRequest).
 
 Request information can be processed and purged via Actions in this section:
 

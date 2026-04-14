@@ -10,7 +10,7 @@
 Action Option -**ST** (-**SetTarfile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-modifies tar file information into GDEXDB for given
+modifies tar file information in GDEXDB for given
 condition. One or multiple tar files can be processed each time.
 
 Although a tar file record can be modified by a specialist, it is rarely
@@ -32,9 +32,7 @@ request with many small data files.
 |          [:ref:`-(DE|Description) <DE>` FileDescription]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.10:
-
-:ref:`Mode option <section4>` that can be specified for setting tar file Action:
+Available mode options:
 
 .. list-table::
    :widths: auto

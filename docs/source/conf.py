@@ -6,8 +6,8 @@ project = 'DSRQST Guide'
 copyright = '2026, GDEX@NCAR, https://gdex.ucar.edu/'
 author = 'Zaihua Ji'
 
-release = '0.3'
-version = '1.0.3'
+release = '0.4'
+version = '1.0.4'
 
 # -- General configuration
 
