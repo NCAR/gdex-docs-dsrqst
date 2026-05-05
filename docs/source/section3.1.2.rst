@@ -10,11 +10,10 @@
 Action Option -**GC** (-**GetControl**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-retrieves request control information for given datasets,
-groups or request types. Request control information for specified specialists
-is retrieved if the specialist login names are provided. Without a specified
-condition, request control records owned by the specialist who runs **dsrqst**
-are retrieved.
+retrieves request control information for the given
+datasets, groups, or request types. If specialist login names are provided,
+records owned by those specialists are retrieved. If no condition is
+given, the records owned by the specialist running **dsrqst** are retrieved.
 
 | **dsrqst** -(GC|GetControl) [:ref:`Mode Options <mode3.1.2>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -40,11 +39,11 @@ Available mode option:
    * - :ref:`-(FO|FormatOutput) <FO>`
      - format the column output with a fixed width for all values of a given field
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which request control fields to
-retrieve. It defaults to 'CTIRWGSPOUH' if :ref:`-FN <FN>` is not provided. Request
-control information of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to choose which request control fields
+to retrieve. If :ref:`-FN <FN>` is not provided, it defaults to 'CTIRWGSPOUH'. Use
+:ref:`-FN <FN>` ALL to retrieve every available field.
 
-Valid field names of request controls and their corresponding :ref:`Info <section5>` option
+Valid request control field names and their corresponding :ref:`Info <section5>` option
 names:
 
 .. list-table::
@@ -133,19 +132,20 @@ names:
      - :ref:`-(CC|CarbonCopy) <CC>`
      - Carbon copy emails; S - specialist only
 
-Request control information can be retrieved for specified datasets per
-option :ref:`-DS <DS>` (-Dataset), and/or other conditions. :ref:`Info option <section5>` :ref:`-DS <DS>` accepts
-wildcard input of '%' for matching any number of characters.
+Request control information can be retrieved for specified datasets via
+option :ref:`-DS <DS>` (-Dataset), with optional additional conditions. :ref:`Info <section5>` option
+:ref:`-DS <DS>` accepts the wildcard '%' to match any number of characters.
 
-If no dataset number is given, only request control records owned by the
-specialist who executes this Action are gathered. To view records owned by
+If no dataset number is given, only the request control records owned by
+the specialist running this action are returned. To view records owned by
 another specialist, specify :ref:`Info option <section5>` :ref:`-SN <SN>` (-Specialist) for that
-specialist. To view all request control records, provide :ref:`-SN <SN>` with value 'ALL'.
+specialist. To view all request control records, supply :ref:`-SN <SN>` with the value
+'ALL'.
 
 
 .. _3.1.2_e2:
 
-**EXAMPLE 2. To get all request control information with all control fields under your control:**
+**EXAMPLE 2. To get every field of every request control under your control:**
 
 | **dsrqst** :ref:`GC <GC>` :ref:`-FN <FN>` ALL
 

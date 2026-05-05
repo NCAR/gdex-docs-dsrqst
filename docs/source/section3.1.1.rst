@@ -10,9 +10,9 @@
 Action Option -**SC** (-**SetControl**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-creates and modifies request control information in
-GDEXDB for given datasets, groups, and request types. One or multiple records
-can be processed each time.
+creates or modifies request control information in
+GDEXDB for given datasets, groups, and request types. One or more records
+can be processed per call.
 
 | **dsrqst** -(SC|SetControl) [:ref:`Mode Options <mode3.1.1>`]
 |          [:ref:`-(CI|ControlIndex) <CI>` RequestControlIndices]
@@ -51,49 +51,37 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(MD|MyDataset) <MD>`
-     - sets information into GDEXDB no matter the specialist who runs **dsrqst** owns the dataset or not
+     - writes information to GDEXDB regardless of whether the specialist running **dsrqst** owns the dataset
    * - :ref:`-(NC|NewControl) <NC>`
-     - sets a new request control record into GDEXDB for given dataset, group index, and request type
+     - adds a new request control record to GDEXDB for the given dataset, group index, and request type
 
-If a request control record already exists in GDEXDB for a given request
-control index, the record is modified; otherwise, a new record is added if
+If a request control record already exists in GDEXDB for the given control
+index, that record is modified; otherwise, a new record is added when the
 control index is 0 and :ref:`Mode option <section4>` :ref:`-NC <NC>` (-NewControl) is present. A group
 index of 0 means the request control applies to the whole dataset.
-Combination of dataset number, group index and request type must be unique
-for each request control record.
+The combination of dataset number, group index, and request type must be
+unique for each request control record.
 
 Partitions divide a large request, involving many files, into smaller
-partitions (maximum 64). All partitions may be processed concurrently
-if enough compute resources are available. To enable partition functionality
-for a request control configuration, DECS specialists need to: 1. in the
-customized ProcessCommand specified for the request control, process the
-whole request and generate all the file records in table wfrqst without
-processing individual data files physically, and instead fill the field
-wfrqst.command with one command for subset/format conversion of each
-individual file (executed in the later partition process); 2. set either
-Partition Limit or Size via :ref:`-PL <PL>` (-PartitionLimit) or :ref:`-PZ <PZ>` (-PartitionSize);
-3. optionally set the command call flag via :ref:`-PF <PF>` (-PartitionFlag) to control
-how the request control command is called. The partition flag defaults to N,
-meaning the request control command is called once in the form
-'CustomizedCommand RequestIndex' to generate the wfrqst file records, after
-which DSRQST handles partitioning and building individual files. Set the
-flag to P for DSRQST to call the command again for each partition process in
-the form 'CustomizedCommand RequestIndex RequestDirectory PartitionIndex',
-making the per-file wfrqst.command optional for flag value P. If the
-partition flag is F, the request control command is called finally in the
-form 'CustomizedCommand RequestIndex RequestDirectory' after all partitions
-are processed successfully. Set the flag to B if both P and F are required.
+pieces (up to 64). All partitions can be processed concurrently if enough
+compute resources are available. To enable partition support for a request
+control configuration, a DECS specialist must:
 
-If a DECS specialist other than the primary dataset owner is set for a
-request control record, that specialist takes responsibility for data
-requests of the dataset instead of the primary owner.
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ 1. In the customized ProcessCommand specified for the request control, process the whole request and generate all the file records in table wfrqst without physically processing the individual data files; instead, fill the field wfrqst.command with the per-file subset/format-conversion command (executed later in the partition process). 2. Set either the partition limit or the partition size via :ref:`-PL <PL>` (-PartitionLimit) or :ref:`-PZ <PZ>` (-PartitionSize). 3. Optionally set the command call flag via :ref:`-PF <PF>` (-PartitionFlag) to control how the request control command is invoked. The partition flag defaults to N, meaning the request control command is called once in the form 'CustomizedCommand RequestIndex' to generate the wfrqst file records, after which DSRQST handles the partitioning and the per-file builds. Set the flag to P for DSRQST to call the command again for each partition process in the form 'CustomizedCommand RequestIndex RequestDirectory PartitionIndex', which makes the per-file wfrqst.command optional. If the flag is F, the request control command is called one final time in the form 'CustomizedCommand RequestIndex RequestDirectory' after all partitions have completed successfully. Set the flag to B when both P and F are required.
+
+If a DECS specialist other than the primary dataset owner is set in a
+request control record, that specialist takes responsibility for the
+dataset's data requests instead of the primary owner.
 
 
 .. _3.1.1_e1:
 
-**EXAMPLE 1. Set request control information of d540006 via input file 'd540006.ctl':**
+**EXAMPLE 1. Set the request control information for d540006 from the input file 'd540006.ctl':**
 
-| **dsrqst** :ref:`SC <SC>` :ref:`-NC <NC>` :ref:`-IF <IF>` d540006.ctl
+| **dsrqst** :ref:`SC <SC>` :ref:`-NC <NC>` -IF d540006.ctl
 
 Content of input file d540006.ctl:
 

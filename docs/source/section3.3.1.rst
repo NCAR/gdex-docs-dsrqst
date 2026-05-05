@@ -10,8 +10,8 @@
 Action Option -**BR** (-**BuildRequest**) (Alias: -**ProcessRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-processes one or multiple
-individual requests with specified request indices.
+(Alias: -ProcessRequest) processes one or more
+individual requests with the specified request indices.
 
 | **dsrqst** -(BR|BuildRequest) [:ref:`Mode Options <mode3.3.1>`]
 |           :ref:`-(RI|RequestIndex) <RI>` RequestIndices
@@ -31,18 +31,18 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere.
+     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere
    * - :ref:`-(BG|BackGround) <BG>`
-     - background process to turn off screen display for both standard outputs and errors
+     - background process; turns off screen display for both standard output and standard error
    * - :ref:`-(GZ|GMTZone) <GZ>`
      - uses GMT dates/times as controlling times
    * - :ref:`-(NE|NoEmail) <NE>`
      - does not send email to the specialist after update
    * - :ref:`-(NO|NotOnline) <NO>`
-     - does not publish filelist after update and set request status to N
+     - does not publish the file list after update and sets the request status to N
 
-A request must be in status "Q" (Queued) before it can be processed. The DECS
-specialist must also be the owner of the request.
+A request must be in status 'Q' (Queued) before it can be processed, and
+the DECS specialist running the action must own the request.
 
 To process a request owned by another specialist, use :ref:`Info option <section5>` :ref:`-LN <LN>`
 (-LoginName) to provide that specialist's login name.
@@ -50,8 +50,8 @@ To process a request owned by another specialist, use :ref:`Info option <section
 Provide local files via :ref:`Info option <section5>` :ref:`-LF <LF>` (-LocalFile) to build a Type 'C'
 (Customized) request.
 
-If a customized request location is provided, the requested data are staged
-there and the request is purged immediately.
+If a customized request location is provided, the requested data are
+staged there and the request is purged immediately.
 
 
 

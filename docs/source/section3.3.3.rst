@@ -10,10 +10,10 @@
 Action Option -**PR** (-**PurgeRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-purges one or multiple requests by removing the
-temporarily staged online data (if not shared by other requests) associated
-with the requests, deleting request records and their data file records,
-and recording request and data usage information for special order metrics.
+purges one or more requests by removing the
+temporarily staged online data (when not shared by other requests),
+deleting the request and data file records, and recording request and data
+usage information for special order metrics.
 
 | **dsrqst** -(PR|PurgeRequest) [:ref:`Mode Options <mode3.3.3>`]
 |           :ref:`-(RI|RequestIndex) <RI>` RequestIndices
@@ -29,16 +29,16 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere.
+     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere
    * - :ref:`-(BG|BackGround) <BG>`
-     - background process to turn off screen display for both standard outputs and errors
+     - background process; turns off screen display for both standard output and standard error
    * - :ref:`-(FP|ForcePurge) <FP>`
-     - must be present to purge a request with data online but not yet due to be purged
+     - required to purge a request whose data are online but not yet due
 
-A request must be in status "P" (Ready for Purge) or "O" (Data Online) with
-a due purging time before it can be purged. For requests with status "O" but
-not yet due, :ref:`Mode option <section4>` :ref:`-FP <FP>` (-ForcePurge) must be present. The DECS specialist
-must also be the owner of the request.
+A request must be in status 'P' (Ready for Purge), or 'O' (Data Online)
+with a due purge time, before it can be purged. For requests in status 'O'
+that are not yet due, :ref:`Mode option <section4>` :ref:`-FP <FP>` (-ForcePurge) must be present. The
+DECS specialist running the action must own the request.
 
 To purge a request owned by another specialist, use :ref:`Info option <section5>` :ref:`-LN <LN>`
 (-LoginName) to provide that specialist's login name.

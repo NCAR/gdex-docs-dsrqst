@@ -10,8 +10,8 @@
 Action Option -**GT** (-**GetTarfile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-retrieves tar file information for specified requests or
-partitions.
+retrieves tar file information for specified requests
+or partitions.
 
 | **dsrqst** -(GT|GetTarfile) [:ref:`Mode Options <mode3.2.9>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -41,11 +41,11 @@ Available mode options:
    * - :ref:`-(WD|WithDataset) <WD>`
      - show Dataset ID for each request tar file
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which tar file fields to
-retrieve. It defaults to 'TFRPSMN' if :ref:`-FN <FN>` is not provided. Tar file
-information of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to choose which tar file fields to
+retrieve. If :ref:`-FN <FN>` is not provided, it defaults to 'TFRPSMN'. Use :ref:`-FN <FN>` ALL to
+retrieve every available field.
 
-Valid field names of tar files and their corresponding :ref:`Info option <section5>` names:
+Valid tar file field names and their corresponding :ref:`Info option <section5>` names:
 
 .. list-table::
    :widths: auto
@@ -97,8 +97,9 @@ Valid field names of tar files and their corresponding :ref:`Info option <sectio
      - :ref:`-(DE|Description) <DE>`
      - description of this file
 
-Tar file information can be retrieved for specified request indices per
-option :ref:`-RI <RI>` (-RequestIndex) or partition indices per option :ref:`-PI <PI>` (-PartitionIndex).
+Tar file information can be retrieved for the request indices given via
+option :ref:`-RI <RI>` (-RequestIndex), or the partition indices given via option :ref:`-PI <PI>`
+(-PartitionIndex).
 
 
 

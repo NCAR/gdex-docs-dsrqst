@@ -10,9 +10,9 @@
 Action Option -**RP** (-**ResetPurge**) (Aliases: -**ResetPurgeTime**, -**RePublish**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-changes the purging
-date/time for a request to purge it either sooner or later. Without providing
-new purge date/time, the action simply re-publishes the request filelist.
+(Alias: -ResetPurgeTime|-RePublish) changes the purge
+date/time for a request so it is purged sooner or later. Without a new
+purge date/time, this action simply re-publishes the request file list.
 
 | **dsrqst** -(RP|ResetPurge) [:ref:`Mode Option <mode3.3.4>`]
 |           :ref:`-(RI|RequestIndex) <RI>` RequestIndices
@@ -31,11 +31,11 @@ Available mode options:
    * - :ref:`-(GZ|GMTZone) <GZ>`
      - uses GMT dates/times as controlling times
    * - :ref:`-(WE|WithEmail) <WE>`
-     - forces sending email to requester after the filelist is republished
+     - forces an email to the requester after the file list is republished
 
-Use this action, rather than :ref:`-SR <SR>` (-SetRequest), to change the purge date/time
-when the purge date/time shown on the web page for temporarily staged online
-data files also needs to be updated.
+Use this action, rather than :ref:`-SR <SR>` (-SetRequest), when changing the purge
+date/time also requires updating the purge date/time displayed on the
+webpage for the temporarily staged online data files.
 
 
 

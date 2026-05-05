@@ -10,12 +10,12 @@
 Action Option -**ST** (-**SetTarfile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-modifies tar file information in GDEXDB for given
-condition. One or multiple tar files can be processed each time.
+modifies tar file information in GDEXDB for the given
+conditions. One or more tar files can be processed per call.
 
-Although a tar file record can be modified by a specialist, it is rarely
-needed. Tar file records are normally generated for a successfully-built
-request with many small data files.
+Although a specialist can modify a tar file record, this is rarely needed.
+Tar file records are normally generated automatically for a successfully
+built request that contains many small data files.
 
 | **dsrqst** -(ST|SetTarfile) [:ref:`Mode Option <mode3.2.10>`]
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]
@@ -39,9 +39,9 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(MD|MyDataset) <MD>`
-     - sets information into GDEXDB no matter the specialist who runs **dsrqst** owns the dataset or not
+     - writes information to GDEXDB regardless of whether the specialist running **dsrqst** owns the dataset
    * - :ref:`-(RO|ResetOrder) <RO>`
-     - resets the display order indices of the tar file records according to the order as they are given per option :ref:`-WF <WF>` (-WebFile)
+     - resets the display-order indices of the tar file records to match the order in which they are given via option :ref:`-WF <WF>` (-WebFile)
 
 
 

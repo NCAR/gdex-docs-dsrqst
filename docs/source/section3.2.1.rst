@@ -10,9 +10,9 @@
 Action Option -**GR** (-**GetRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-retrieves data request information for specified requests
-if the request indices are provided. Without a specified condition, requests
-owned by the specialist who executes this Action are retrieved.
+retrieves request information for the requests whose
+indices are provided. If no condition is given, the requests owned by the
+specialist running this action are returned.
 
 | **dsrqst** -(GR|GetRequest) [:ref:`Mode Options <mode3.2.1>`]
 |          [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -44,11 +44,11 @@ Available mode options:
    * - :ref:`-(FO|FormatOutput) <FO>`
      - format the column output with a fixed width for all values of a given field
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which request fields to retrieve.
-It defaults to 'REBTIOCJUXAGSH' if :ref:`-FN <FN>` is not provided. Request information
-of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to choose which request fields to
+retrieve. If :ref:`-FN <FN>` is not provided, it defaults to 'REBTIOCJUXAGSH'. Use
+:ref:`-FN <FN>` ALL to retrieve every available field.
 
-Valid field names of requests and their corresponding :ref:`Info option <section5>` names:
+Valid request field names and their corresponding :ref:`Info option <section5>` names:
 
 .. list-table::
    :widths: auto
@@ -136,18 +136,18 @@ Valid field names of requests and their corresponding :ref:`Info option <section
      - :ref:`-(RF|RequestDesc) <RF>`
      - additional request information
 
-Data request information can be retrieved for specified request indices per
-option :ref:`-RI <RI>` (-RequestIndex). :ref:`Info option <section5>` :ref:`-RN <RN>` (-RequestName) can also identify
-request indices. Option :ref:`-RN <RN>` accepts wildcard input of '%' for matching any
-number of characters.
+Request information can be retrieved for the request indices given via
+option :ref:`-RI <RI>` (-RequestIndex). :ref:`Info option <section5>` :ref:`-RN <RN>` (-RequestName) can also
+identify request indices, and accepts the wildcard '%' to match any number
+of characters.
 
-If no dataset or request is specified, request records owned by the specialist
-who issues this Action are retrieved.
+If no dataset or request is specified, the request records owned by the
+specialist running this action are returned.
 
 
 .. _3.2.1_e3:
 
-**EXAMPLE 3. To get the request information for default fields owned by specialist login name 'zji':**
+**EXAMPLE 3. To get the default-field request information owned by the specialist with login name 'zji':**
 
 | **dsrqst** :ref:`GR <GR>` :ref:`-SN <SN>` zji
 

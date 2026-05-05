@@ -4,8 +4,8 @@
 5 - INFORMATION OPTIONS
 =================================
 
-Information options pass information, one or multiple values, into **dsrqst**.
-Two types of Info options are used:
+Information options pass one or more values into **dsrqst**. There are two
+types of Info option:
 
 .. list-table::
    :widths: auto
@@ -14,7 +14,7 @@ Two types of Info options are used:
    * - :ref:`Single-Value Info Options <section5.1>`
      - pass a single value to **dsrqst**
    * - :ref:`Multi-Value Info Options <section5.2>`
-     - pass one or multiple values to **dsrqst**
+     - pass one or more values to **dsrqst**
 
 .. toctree::
    :maxdepth: 2

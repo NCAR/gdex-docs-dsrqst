@@ -44,11 +44,11 @@ Available mode options:
    * - :ref:`-(WD|WithDataset) <WD>`
      - show Dataset ID for each request file
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify which data file fields to
-retrieve. It defaults to 'FRPTYSNMA' if :ref:`-FN <FN>` is not provided. Data file
-information of all available fields is retrieved if :ref:`-FN <FN>` ALL is given.
+Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to choose which data file fields to
+retrieve. If :ref:`-FN <FN>` is not provided, it defaults to 'FRPTYSNMA'. Use :ref:`-FN <FN>` ALL
+to retrieve every available field.
 
-Valid field names of data files and their corresponding :ref:`Info option <section5>` names:
+Valid data file field names and their corresponding :ref:`Info option <section5>` names:
 
 .. list-table::
    :widths: auto
@@ -118,19 +118,20 @@ Valid field names of data files and their corresponding :ref:`Info option <secti
      - :ref:`-(DE|Description) <DE>`
      - description of this file
 
-Data file information can be retrieved for specified request indices per
-option :ref:`-RI <RI>` (-RequestIndex) or partition indices per option :ref:`-PI <PI>` (-PartitionIndex).
+Data file information can be retrieved for the request indices given via
+option :ref:`-RI <RI>` (-RequestIndex), or the partition indices given via option :ref:`-PI <PI>`
+(-PartitionIndex).
 
-A data file record status is initially set to 'R' (requested) when a request
-is submitted. It changes to 'O' (online) after the request is processed and
-the data file is staged online for download. If a copy of the same data file
-is already online for another request, the data file is shared instead of
-staging a new copy.
+A data file record's status is initially 'R' (requested) when a request is
+submitted. It changes to 'O' (online) after the request is processed and
+the data file has been staged online for download. If a copy of the same
+data file is already online for another request, that copy is shared
+rather than staging a new one.
 
 
 .. _3.2.6_e7:
 
-**EXAMPLE 7. To get the data file information of partition index 42 for default fields:**
+**EXAMPLE 7. To get the default-field data file information for partition index 13:**
 
 | **dsrqst** :ref:`GF <GF>` :ref:`-PI <PI>` 13
 

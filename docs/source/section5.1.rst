@@ -4,9 +4,8 @@
 5.1 - Single-Value Info Options
 =================================
 
-A single-value Info option passes one value to **dsrqst**. One value, and one
-only, must follow a single-value option; an error message is displayed if no
-value or more than one value is passed in.
+A single-value Info option passes exactly one value to **dsrqst**. An error
+message is displayed if no value or more than one value is given.
 
 
 .. _BP:
@@ -14,16 +13,17 @@ value or more than one value is passed in.
 Info Option -**BP** (-**BatchProcess**) (Aliases: -**d**, -**DelayedMode**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-delayed mode execution. When
-present, the **dsrqst** command is not executed immediately; instead, the command
-information is recorded into GDEXDB and executed later by the centralized
-daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_. One or multiple host names can be specified after option :ref:`-BP <BP>`
-to force the **dsrqst** command to run on or not on those hosts. For example,
-'-d evans' to run on host 'evans'; '-d evans:mirage5' to run on hosts 'evans'
-and 'mirage5'; and '-d \!mirage1:mirage2' to run on all configured hosts other
-than 'mirage1' and 'mirage2'. Character '!' must be escaped on the command
-line. An upper limit for number of tries, 1 to 99, can also be passed in with
-this option, as '-d 2' for example. It defaults to 1 if not specified.
+delayed-mode execution.
+When present, the **dsrqst** command is not executed immediately; instead,
+the command information is recorded in GDEXDB and executed later by the
+centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_. One or more host names can follow option :ref:`-BP <BP>`
+to force the **dsrqst** command to run on, or to avoid, those hosts. For
+example, '-d evans' runs on host 'evans'; '-d evans:mirage5' runs on
+hosts 'evans' and 'mirage5'; '-d \!mirage1:mirage2' runs on every
+configured host other than 'mirage1' and 'mirage2'. The character '!'
+must be escaped on the command line. An upper limit on the number of
+tries (1 to 99) can also be supplied via this option, for example '-d 2'.
+It defaults to 1 if not specified.
 
 
 .. _DV:
@@ -32,7 +32,7 @@ Info Option -**DV** (-**Divider**) (Aliases: -**Delimiter**, -**Separator**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 delimiter for separating
-columns of multi-value Info options in input files. It defaults to '<:>'.
+columns of multi-value Info options inside input files. Defaults to '<:>'.
 
 
 .. _EL:
@@ -40,8 +40,8 @@ columns of multi-value Info options in input files. It defaults to '<:>'.
 Info Option -**EL** (-**EmailLimit**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-defaults to 20. When present with a value larger than 0,
-**dsrqst** emails status of up to this many requests.
+defaults to 20. When present with a value greater than
+0, **dsrqst** emails the status of up to that many requests.
 
 
 .. _ES:
@@ -50,7 +50,7 @@ Info Option -**ES** (-**EqualSign**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 specifies the equal sign used to assign a value to a
-single-value or multi-value option in input files. It defaults to '<=>'.
+single-value or multi-value option in input files. Defaults to '<=>'.
 
 
 .. _FN:
@@ -58,11 +58,11 @@ single-value or multi-value option in input files. It defaults to '<=>'.
 Info Option -**FN** (-**FieldNames**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-a string of single-letter field names. Values of the
-selected fields are retrieved by actions :ref:`-GC <GC>` (-GetControl), :ref:`-GP <GP>`
-(-GetPartition), :ref:`-GR <GR>` (-GetRequest) and :ref:`-GF <GF>` (-GetFile). Default fields are
-retrieved if this option is not specified. Valid field names are listed in the
-corresponding action sections.
+is a string of single-letter field names. The values
+of the selected fields are returned by actions :ref:`-GC <GC>` (-GetControl), :ref:`-GP <GP>`
+(-GetPartition), :ref:`-GR <GR>` (-GetRequest), and :ref:`-GF <GF>` (-GetFile). If this option is
+not specified, the default fields are returned. Valid field names are
+listed in the corresponding action sections.
 
 
 .. _GU:
@@ -70,8 +70,8 @@ corresponding action sections.
 Mode Option -**GU** (-**GetUsage**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-gets usage information of given requests and records it in
-order metrics.
+gets usage information for the given requests and
+records it for order metrics.
 
 
 .. _GZ:
@@ -79,8 +79,9 @@ order metrics.
 Mode Option -**GZ** (-**GMTZone**) (Aliases: -**GMT**, -**GreenwichZone**, -**UTC**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-uses GMT dates/times as
-controlling times for processing request actions, instead of mountain time.
+(Alias: -GMT|GreenwichZone|UTC) uses GMT dates/times,
+rather than mountain time, as the controlling times for processing
+request actions.
 
 
 .. _LN:
@@ -88,9 +89,9 @@ controlling times for processing request actions, instead of mountain time.
 Info Option -**LN** (-**LoginName**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-login name of the current user; defaults to the current
-DECS specialist who starts **dsrqst**. Set this option to run the utility for a
-specialist other than yourself.
+login name of the current user; defaults to the DECS
+specialist who is running **dsrqst**. Set this option to run the utility on
+behalf of a specialist other than yourself.
 
 
 .. _OF:
@@ -98,9 +99,9 @@ specialist other than yourself.
 Info Option -**OF** (-**OutputFile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-specifies an output file name for writing the output
-result of this application. Output file format matches the format of input
-files. If this option is not given, the result is displayed on screen.
+specifies the file name for writing the application
+output. The output format matches the input file format. If this option
+is omitted, results are displayed on screen.
 
 
 .. _ON:
@@ -108,12 +109,13 @@ files. If this option is not given, the result is displayed on screen.
 Info Option -**ON** (-**OrderNames**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-a string of single-letter field names for ordering results
-of GET actions: :ref:`-GC <GC>` (-GetControl), :ref:`-GP <GP>` (-GetPartition), :ref:`-GR <GR>` (-GetRequest) and
-:ref:`-GF <GF>` (-GetFile). Upper case is for ascending order; lower case is for descending
-order. This option also forces reordering of data files displayed on the
-webpage per :ref:`Action option <section3>` :ref:`-SF <SF>` (-SetFile) when :ref:`Mode option <section4>` :ref:`-RO <RO>` (-Reorder) is
-present but Info option :ref:`-WF <WF>` (-WebFile) is omitted.
+is a string of single-letter field names used to order
+the results of GET actions: :ref:`-GC <GC>` (-GetControl), :ref:`-GP <GP>` (-GetPartition), :ref:`-GR <GR>`
+(-GetRequest), and :ref:`-GF <GF>` (-GetFile). Uppercase indicates ascending order,
+lowercase descending order. This option also forces reordering of the
+data files displayed on the webpage for :ref:`Action <section3>` :ref:`-SF <SF>` (-SetFile) when :ref:`Mode <section4>`
+option :ref:`-RO <RO>` (-Reorder) is present but Info option :ref:`-WF <WF>` (-WebFile) is
+omitted.
 
 
 .. _PW:
@@ -121,11 +123,12 @@ present but Info option :ref:`-WF <WF>` (-WebFile) is omitted.
 Info Option -**PW** (-**PurgeWait**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-defaults to 7200 seconds. Works in daemon mode of
-**dsrqst**. After all due requests have been purged, **dsrqst** waits this period
-before checking again for requests due to be purged. A different wait interval
-can be set using seconds, minutes, hours, or days. For example, ':ref:`-PW <PW>` 4H' for
-4 hours. A numeric value assumes seconds, so ':ref:`-PW <PW>` 3600' means 3600S.
+defaults to 7200 seconds. Used in **dsrqst** daemon mode.
+After all due requests have been purged, **dsrqst** waits this period
+before checking again for requests due to be purged. A different wait
+interval can be set in seconds, minutes, hours, or days; for example,
+'-PW 4H' for 4 hours. A bare numeric value is interpreted as seconds, so
+'-PW 3600' means 3600S.
 
 
 .. _AO:
@@ -133,8 +136,8 @@ can be set using seconds, minutes, hours, or days. For example, ':ref:`-PW <PW>`
 Info Option -**AO** (-**ActOption**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-for setting :ref:`Action <section3>` and :ref:`Mode options <section4>` in input files. It
-defaults to '<!>'.
+is used for setting :ref:`Action <section3>` and :ref:`Mode options <section4>` inside
+input files. Defaults to '<!>'.
 
 
 .. _TS:
@@ -142,11 +145,11 @@ defaults to '<!>'.
 Info Option -**TS** (-**totalSize**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sets the default size in GB — the maximum disk space —
-for **dsrqst** to stage temporary online data. Requests in queue are put on
-hold if the total data online reaches this limit, until older requests are
-purged and data files are removed, freeing enough disk space for the next
-request to be processed.
+sets the default size, in GB, that is the maximum disk
+space available for **dsrqst** to stage temporary online data. Queued
+requests are held when the total online data reaches this limit, until
+older requests are purged and their data files are removed, freeing
+enough disk space for the next request to be processed.
 
 
 .. _WH:
@@ -154,9 +157,9 @@ request to be processed.
 Info Option -**WH** (-**WebHomeDir**) (Aliases: -**WebHome**, -**DownloadHome**, -**OnlineHome**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-specifies a download
-directory on GDEX Server to stage temporary data files for the
-download/archive activity.
+(Alias: -WebHome|-DownloadHome|-OnlineHome) specifies
+the web home directory where requested data files are temporarily staged.
+Defaults to $TRANSFER/dsrqst.
 
 
 

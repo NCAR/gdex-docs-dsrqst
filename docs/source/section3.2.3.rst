@@ -10,8 +10,8 @@
 Action Option -**DL** (-**Delete**) (Aliases: -**RM**, -**Remove**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-deletes one or multiple request file records from GDEXDB for
-given data file names.
+deletes one or more request file records from GDEXDB for
+the given data file names.
 
 | **dsrqst** :ref:`-(DL|Delete) <DL>` [:ref:`Mode Options <mode3.2.3>`]
 |           :ref:`-(RI|RequestIndex) <RI>` RequestIndices
@@ -25,9 +25,9 @@ Available mode option:
    :header-rows: 0
 
    * - :ref:`-(MD|MyDataset) <MD>`
-     - sets information into GDEXDB no matter the specialist who runs **dsrqst** owns the dataset or not
+     - writes information to GDEXDB regardless of whether the specialist running **dsrqst** owns the dataset
 
-Use this action to delete request files. Request Index must be provided.
+Use this action to delete request files. The request index is mandatory.
 
 
 

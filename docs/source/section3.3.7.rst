@@ -10,9 +10,9 @@
 Action Option -**IR** (-**InterruptRequest**) (Alias: -**InterRupt**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-interrupts requests that are currently queued by
-changing their status to 'I' (Interrupted) and recursively killing all child
-processes running to build the requests.
+interrupts currently queued requests by changing
+their status to 'I' (Interrupted) and recursively killing all child
+processes that are building them.
 
 | **dsrqst** -(IR|InterruptRequest) [:ref:`Mode Option <mode3.3.7>`]
 |            :ref:`-(RI|RequestIndex) <RI>` RequestIndices
@@ -25,7 +25,7 @@ Available mode option:
    :header-rows: 0
 
    * - :ref:`-(FI|ForceInterrupt) <FI>`
-     - must be present to interrupt a request that is currently under processing.
+     - required to interrupt a request that is currently being processed
 
 A request index is mandatory.
 
