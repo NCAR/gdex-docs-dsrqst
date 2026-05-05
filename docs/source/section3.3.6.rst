@@ -10,11 +10,11 @@
 Action Option -**UL** (-**UnLock**) (Aliases: -**UnLockRequest**, -**UnLockParition**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-unlocks requests whose building
-processes aborted abnormally. Process ID and computer hostname are saved in a
-request record while the request is under process. If the building process
-aborts abnormally, the PID and hostname are not cleaned. Use this action to
-clean up the PID information and allow the request to be rebuilt on a different
+(Alias: -UnLock) unlocks requests whose build
+processes aborted abnormally. The process ID and host name are saved in a
+request record while the request is being processed. If the build process
+aborts abnormally, the PID and host name are not cleared. Use this action
+to clear that information so the request can be rebuilt on a different
 host.
 
 | **dsrqst** -(UL|UnLockRequest)

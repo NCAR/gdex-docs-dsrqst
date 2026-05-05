@@ -10,8 +10,8 @@
 Action Option -**ER** (-**EmailRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sends an email to the specialist who executes **dsrqst**
-with the current status of a list of requests.
+sends an email to the specialist running **dsrqst**
+containing the current status of a list of requests.
 
 | **dsrqst** -(ER|EmailRequest)
 |          [:ref:`-(RI|RequestIndex) <RI>` RequestIndices]
@@ -30,8 +30,8 @@ with the current status of a list of requests.
 |          [:ref:`-(CC|CarbonCopy) <CC>` Cc'dEmailAddresses]
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-By default, status of up to 20 requests is included in an email. To include
-more requests, change the limit via :ref:`Info option <section5>` :ref:`-EL <EL>` (-EmailLimit).
+By default, the email includes the status of up to 20 requests. To include
+more, change the limit via :ref:`Info option <section5>` :ref:`-EL <EL>` (-EmailLimit).
 
 
 

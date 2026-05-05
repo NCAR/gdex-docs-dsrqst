@@ -10,8 +10,8 @@
 Action Option -**SP** (-**SetPartition**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds and modifies request partition information
-for a given request. One or multiple records can be processed each time.
+adds or modifies request partition information for a
+given request. One or more records can be processed per call.
 
 | **dsrqst** -(SP|SetPartition) [:ref:`Mode Options <mode3.2.5>`]
 |          [:ref:`-(PI|PartitionIndex) <PI>` PartitionIndices]
@@ -29,13 +29,13 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(MD|MyDataset) <MD>`
-     - sets information into GDEXDB regardless of whether the specialist who runs **dsrqst** owns the dataset
+     - writes information to GDEXDB regardless of whether the specialist running **dsrqst** owns the dataset
    * - :ref:`-(NP|NewPartition) <NP>`
-     - adds new partition records into GDEXDB for a given request
+     - adds new partition records to GDEXDB for a given request
 
-Partitions cannot be added again if partition information for a request already
-exists. Specify request index per option :ref:`-RI <RI>` (-RequestIndex) and :ref:`Mode <section4>` option
-:ref:`-NP <NP>` (-NewPartition) to add partitions.
+Partitions cannot be added again if partition information for the request
+already exists. Specify the request index via option :ref:`-RI <RI>` (-RequestIndex)
+together with :ref:`Mode option <section4>` :ref:`-NP <NP>` (-NewPartition) to add partitions.
 
 
 

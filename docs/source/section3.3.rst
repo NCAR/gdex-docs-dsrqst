@@ -4,43 +4,43 @@
 3.3 - Request Process Actions
 =================================
 
-In addition to being started by the centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_, request
-processes can be started manually by DECS specialists by providing request
-indices when executing Action :ref:`-BR <BR>` (-BuildRequest) of **dsrqst**. A request
-can only be processed manually by the specialist listed as the one who
-controls the request.
+Request processes can be started by the centralized daemon `dscheck <https://gdex-docs-dscheck.readthedocs.io>`_ or
+manually by a DECS specialist who supplies request indices when running
+Action :ref:`-BR <BR>` (-BuildRequest). A request can only be processed manually by
+the specialist who controls it.
 
-Data files of a processed request are staged on GDEX Server temporarily for
-online download or access via NCAR internal computers. A DECS specialist can
-also purge a request manually at due time by providing the request index to
-run **dsrqst** with Action :ref:`-PR <PR>` (-PurgeRequest).
+Data files for a processed request are staged on the GDEX Server
+temporarily for online download or for access from NCAR internal
+computers. A DECS specialist can also purge a request manually at its due
+time by supplying the request index to **dsrqst** with Action :ref:`-PR <PR>`
+(-PurgeRequest).
 
-Request information can be processed and purged via Actions in this section:
+Requests are processed and purged through the actions in this section:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`Build Individual Requests <section3.3.1>`
-     - run **dsrqst** to process one or multiple queued requests
+     - run **dsrqst** to process one or more queued requests
    * - Process Partitions
-     - run **dsrqst** to process one or multiple queued partitions
+     - run **dsrqst** to process one or more queued partitions
    * - :ref:`Purge Individual Requests <section3.3.3>`
-     - run **dsrqst** to purge one or multiple due requests
+     - run **dsrqst** to purge one or more due requests
    * - :ref:`Change Purge Time <section3.3.4>`
-     - change purge time of online requests for them to be purged later or sooner
+     - change the purge time of online requests so they are purged later or sooner
    * - :ref:`Clean Request Information <section3.3.5>`
-     - clean one or multiple requests by deleting the files built and file records created in GDEXDB
+     - clean one or more requests by deleting the files that have been built and the file records created in GDEXDB
    * - :ref:`Unlock Request Information <section3.3.6>`
-     - unlock one or multiple request records for them to be rebuilt on a different host
+     - unlock one or more request records so they can be rebuilt on a different host
    * - :ref:`Interrupt Requests <section3.3.7>`
-     - interrupt Queued requests by setting their status to 'I' and killing all the running processes that are building the requests
+     - interrupt queued requests by setting their status to 'I' and killing all running processes that are building them
    * - Unlock Partitions
-     - unlock one or multiple partition records for them to be reprocessed on a different host
+     - unlock one or more partition records so they can be reprocessed on a different host
    * - :ref:`Interrupt Partitions <section3.3.8>`
-     - interrupt Queued partitions by setting their status to 'I' and killing all the running partition processes
+     - interrupt queued partitions by setting their status to 'I' and killing all running partition processes
    * - :ref:`Restore Purged Requests <section3.3.9>`
-     - restore a request that has already been purged by restoring the request and its file information saved in the purge records
+     - restore an already-purged request by re-creating the request and its file information from the saved purge records
 
 .. toctree::
    :maxdepth: 1

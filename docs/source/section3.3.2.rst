@@ -10,8 +10,8 @@
 Action Option -**PP** (-**ProcessPartition**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-processes one or multiple individual partitions
-with specified partition indices.
+processes one or more individual partitions with
+the specified partition indices.
 
 | **dsrqst** -(PP|ProcessPartition) [:ref:`Mode Options <mode3.3.2>`]
 |           :ref:`-(PI|PartitionIndex) <PI>` PartitionIndices
@@ -30,18 +30,18 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere.
+     - works with :ref:`Info option <section5>` :ref:`-BP <BP>` (-BatchProcess) to allow the recorded **dsrqst** command to be started anywhere
    * - :ref:`-(BG|BackGround) <BG>`
-     - background process to turn off screen display for both standard outputs and errors
+     - background process; turns off screen display for both standard output and standard error
    * - :ref:`-(GZ|GMTZone) <GZ>`
      - uses GMT dates/times as controlling times
    * - :ref:`-(NE|NoEmail) <NE>`
      - does not send email to the specialist after update
    * - :ref:`-(NO|NotOnline) <NO>`
-     - does not publish filelist after update and set request status to N
+     - does not publish the file list after update and sets the request status to N
 
-A partition must be in status "Q" (Queued) before it can be processed. The DECS
-specialist must also be the owner of the partition.
+A partition must be in status 'Q' (Queued) before it can be processed, and
+the DECS specialist running the action must own the partition.
 
 
 

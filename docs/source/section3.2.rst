@@ -4,33 +4,34 @@
 3.2 - Request Actions
 =================================
 
-A request record and its associated data file records are normally generated
-from user submission of a data request via web interfaces to program
-'dsrqst.php' with HTTP POST entries, or via command line program 'rdams'.
+A request record and its associated data file records are normally
+generated when a user submits a data request through a web interface to
+the program 'dsrqst.php' via HTTP POST entries, or through the command-line
+program 'rdams'.
 
-Request and data file information can be viewed and modified via Actions
-included in this section:
+Request and data file information can be viewed and modified through the
+actions in this section:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`Get Request Information <section3.2.1>`
-     - retrieve information of existing requests in GDEXDB
+     - retrieve information for existing requests in GDEXDB
    * - :ref:`Set Request Information <section3.2.2>`
-     - add new or modify existing requests
+     - add or modify request records
    * - :ref:`Delete Request Information <section3.2.3>`
-     - delete one or multiple request records
+     - delete one or more request records
    * - :ref:`Get Partition Information <section3.2.4>`
-     - retrieve information of existing partitions
+     - retrieve information for existing partitions
    * - :ref:`Set Partition Information <section3.2.5>`
-     - add new or modify existing partitions
+     - add or modify partitions
    * - :ref:`Get Request File information <section3.2.6>`
      - retrieve data file information
    * - :ref:`Set Request File information <section3.2.7>`
-     - add new or modify file information
+     - add or modify file information
    * - :ref:`Delete Request File Information <section3.2.8>`
-     - delete one or multiple data file records of a specified request
+     - delete one or more data file records of a specified request
    * - :ref:`Get Tar File information <section3.2.9>`
      - retrieve tar file information
    * - :ref:`Set Tar File information <section3.2.10>`

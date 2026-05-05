@@ -10,9 +10,9 @@
 Action Option -**IP** (-**InterruptParition**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-interrupts request partitions that are currently
-queued by changing their status to 'I' (Interrupted) and recursively killing
-all child processes running to process the partitions.
+interrupts currently queued request partitions
+by changing their status to 'I' (Interrupted) and recursively killing all
+child processes that are running them.
 
 | **dsrqst** -(IP|InterruptPartition) [:ref:`Mode Option <mode3.3.8>`]
 |            :ref:`-(PI|PartitionIndex) <PI>` PartitionIndices
@@ -25,7 +25,7 @@ Available mode option:
    :header-rows: 0
 
    * - :ref:`-(FI|ForceInterrupt) <FI>`
-     - must be present to interrupt a partition that is currently under processing.
+     - required to interrupt a partition that is currently being processed
 
 A partition index is mandatory.
 

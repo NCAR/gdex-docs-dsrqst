@@ -4,29 +4,29 @@
 3 - ACTION OPTIONS
 =================================
 
-Action options specify what tasks **dsrqst** executes. No values should follow
-Action options. Multiple tasks may be processed with a single execution of
-**dsrqst** depending on what Action option is chosen. Some comprehensive actions
-automatically include other simpler actions by default; and others include
-additional actions when certain :ref:`Mode options <section4>` are present. Providing multiple
-Action options simultaneously is not allowed.
+Action options specify the task that **dsrqst** executes. No values follow an
+Action option. A single **dsrqst** execution can perform multiple tasks
+depending on which Action option is chosen: some comprehensive actions
+include other simpler actions by default, and others trigger additional
+actions when certain :ref:`Mode options <section4>` are present. Providing multiple Action
+options simultaneously is not allowed.
 
-Some actions set information into and some retrieve information from GDEXDB for
-one or multiple datasets.
+Some actions write information to GDEXDB, and others retrieve information
+from GDEXDB, for one or more datasets.
 
-Based on the information being manipulated, the actions are divided into three
-categories:
+Based on the kind of information they manipulate, the actions fall into
+three categories:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`Request Control Actions <section3.1>`
-     - create, delete, modify and retrieve request control information in GDEXDB, of a given dataset/group and a request type
+     - create, delete, modify, and retrieve request control information in GDEXDB for a given dataset/group and request type
    * - :ref:`Request Actions <section3.2>`
-     - create, delete, modify and retrieve request information of individual requests and the requested data files
+     - create, delete, modify, and retrieve information for individual requests and their requested data files
    * - :ref:`Request Process Actions <section3.3>`
-     - build requests by staging data online and purge requests by cleaning request records and temporary online data
+     - build requests by staging data online, and purge requests by cleaning request records and the temporary online data
 
 .. toctree::
    :maxdepth: 2

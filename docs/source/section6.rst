@@ -11,13 +11,13 @@ Several online utility programs complement **dsrqst**:
    :header-rows: 0
 
    * - Program 'dsrqst.php'
-     - generates new request records according to information passed in via HTTP POST entries; get online help at https://gdex.ucar.edu/php/dsrqst.php
+     - generates new request records from information passed in via HTTP POST entries; online help at https://gdex.ucar.edu/php/dsrqst.php
    * - Program 'wqrqst.php'
-     - puts waiting requests in queue to grant permissions for the specialist-controlled requests to be processed
+     - puts waiting requests into the queue, granting permission for specialist-controlled requests to be processed
    * - Program 'ckrqst.php'
-     - checks current status of requests under specified condition
+     - checks the current status of requests matching a specified condition
    * - Program 'csrqst.php'
-     - changes request status for holding or re-processing.
+     - changes request status for holding or re-processing
 
 
 
